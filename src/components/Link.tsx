@@ -60,8 +60,13 @@ export type LinkProps = {
 } & Omit<NextLinkComposedProps, "to" | "linkAs" | "href"> &
   Omit<MuiLinkProps, "href">;
 
-// A styled version of the Next.js Link component:
-// https://nextjs.org/docs/api-reference/next/link
+/**
+ * A styled version of the Next.js Link component:
+ * @see {@link https://nextjs.org/docs/api-reference/next/link}
+ *
+ * Based on an example from the MUI repo
+ * @see {@link https://github.com/mui/material-ui/blob/master/examples/nextjs-with-typescript/src/Link.tsx}
+ */
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   props,
   ref
