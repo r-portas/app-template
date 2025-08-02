@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { fontClassNames } from "./fonts";
+import { AppShell } from "@/components/app-shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "App Template",
   description:
-    "An opionated template for building web applications, preconfigured with everything needs to start building an idea quickly",
+    "An opinionated template for building web applications, preconfigured with everything needs to start building an idea quickly",
 };
 
 export default function RootLayout({
@@ -13,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${fontClassNames} dark`}>
+      <body>
+        <AppShell>{children}</AppShell>
+      </body>
     </html>
   );
 }

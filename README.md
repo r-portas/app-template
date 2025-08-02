@@ -1,6 +1,6 @@
 # App Template
 
-An opionated template for building web applications, preconfigured with everything needs to start building an idea quickly.
+An opinionated template for building web applications, preconfigured with everything needs to start building an idea quickly.
 
 ## Other Documentation
 

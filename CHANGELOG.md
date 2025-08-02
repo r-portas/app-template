@@ -5,3 +5,7 @@
 - Created the initial template
 - Added Prettier
 - Add `AGENT.md` and configure symlink to `.github/copilot-instructions.md`
+- Configure `shadcn/ui` and configure fonts
+- Add some standard `shadcn/ui` components
+- Add the `AppShell` component, which includes a sidebar and main content area
+- Implemented a mock homepage

@@ -7,7 +7,7 @@ App Template is an opinionated template for building web applications, preconfig
 - Framework: Next.js App Router
 - Frontend: React with TypeScript
 - Database: SQLite with Drizzle
-- Styling: Tailwind CSS
+- Styling: Tailwind CSS v4
 - Component Library: shadcn/ui
 - Package manager: bun
 
@@ -19,7 +19,7 @@ App Template is an opinionated template for building web applications, preconfig
 - Run single test: `bun test src/file.test.ts`
 - Preview production build: `bun start`
 - Fix formatting: `bun format`
-- Add a shadcn/ui component: `bunx --bun shadcn@latest add <component>`
+- Add a shadcn/ui component: `bun shadcn add <component>`
 
 ### Development Environment
 
