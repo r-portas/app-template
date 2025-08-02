@@ -2,6 +2,15 @@
 
 App Template is an opinionated template for building web applications, preconfigured with everything you need to start building an idea quickly.
 
+## Architecture
+
+- Framework: Next.js App Router
+- Frontend: React with TypeScript
+- Database: SQLite with Drizzle
+- Styling: Tailwind CSS
+- Component Library: shadcn/ui
+- Package manager: bun
+
 ## Build and Commands
 
 - Start development server: `bun dev`
@@ -21,6 +30,10 @@ App Template is an opinionated template for building web applications, preconfig
 - React component filenames should be in `kebab-case`, for example: `my-component.tsx`.
 - Use descriptive names for components, functions, and variables.
 - Use TypeScript interfaces for public APIs.
+
+## UI and Styling
+
+- Prefer to use shadcn/ui components for consistency.
 
 ## Testing
 
