@@ -2,6 +2,11 @@
 
 An opionated template for building web applications, preconfigured with everything needs to start building an idea quickly.
 
+## Other Documentation
+
+- [CHANGELOG.md](./CHANGELOG.md) for the detailed history of the project, update this everytime a feature is completed.
+- [AGENT.md](./AGENT.md) used by AI agents to understand the codebase.
+
 ## Tools and Technologies
 
 ### Preconfigured
@@ -38,3 +43,9 @@ bun test
 # Update dependencies
 bun update --latest
 ```
+
+## Environment Variables
+
+The following environment variables should be configured in a `.env.local` file:
+
+- `ABC`: Description
