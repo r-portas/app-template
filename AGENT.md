@@ -7,6 +7,7 @@ App Template is an opinionated template for building web applications, preconfig
 - Framework: Next.js App Router
 - Frontend: React with TypeScript
 - Database: SQLite with Drizzle
+- Schema Validation: Zod
 - Styling: Tailwind CSS v4
 - Component Library: shadcn/ui
 - Package manager: bun
