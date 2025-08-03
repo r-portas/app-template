@@ -28,13 +28,39 @@ App Template is an opinionated template for building web applications, preconfig
 
 ## Code Style
 
+- Use double quotes for strings.
 - React component filenames should be in `kebab-case`, for example: `my-component.tsx`.
 - Use descriptive names for components, functions, and variables.
 - Use TypeScript interfaces for public APIs.
+- When defining the type for `children`, use `ReactNode` and import it from `react` at the top of the file.
+- When defining multiple components in a single file, use named exports for each component and give each component a docstring comment, for example:
+
+```tsx
+/**
+ * Displays a list of items to the user
+ *
+ * @remarks
+ * {{(optional) Any other relevant details }}
+ */
+export function List() {}
+
+/**
+ * Represents a single item in the list
+ *
+ * @remarks
+ * {{(optional) Any other relevant details }}
+ */
+export function ListItem() {}
+```
 
 ## UI and Styling
 
 - Prefer to use shadcn/ui components for consistency.
+- When creating links, use the `Link` component from `@/components/ui/Link` to ensure proper styling and behavior. Do not add `target="_blank"` or `rel="noopener noreferrer"` attributes as they are automatically added by the `Link` component.
+
+## Writing Style
+
+- Do not put a comma before the `and` in a list.
 
 ## Testing
 

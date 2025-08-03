@@ -41,7 +41,7 @@ The following tools aren't preconfigured, but can be added easily:
 # Install dependencies
 bun install
 
-# Run the development server
+# Run the development server, or run the "Start Dev Server" VSCode task
 bun dev
 
 # Run tests
@@ -59,7 +59,7 @@ The following environment variables should be configured in a `.env.local` file:
 
 ## Deployment
 
-This template contains a preconfigured `Dockerfile` and `compose.yml` for easy deployment via Docker, which can be ran by running the following command:
+This template contains a pre-configured `Dockerfile` and `compose.yml` for easy deployment via Docker, which can be ran by running the following command:
 
 ```bash
 docker compose up
