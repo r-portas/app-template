@@ -1,0 +1,26 @@
+{
+  "React Component with Children": {
+    "prefix": "rcchild",
+    "description": "React component with children",
+    "body": [
+      "import { ReactNode } from 'react';",
+      "",
+      "export function $1({ children }: { children: ReactNode }) {",
+      "  return <div>{children}</div>;",
+      "};",
+    ],
+  },
+  "React Component Unit Test": {
+    "prefix": "rctest",
+    "description": "React component unit test",
+    "body": [
+      "import { render } from '@testing-library/react';",
+      "import { $1 } from './$1';",
+      "",
+      "test(\"renders $1\", () => {",
+      "  const { getByText } = render(<$1 />);",
+      "  expect(getByText(/$2/i)).toBeInTheDocument();",
+      "});",
+    ],
+  },
+}
