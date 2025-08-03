@@ -4,10 +4,20 @@ An opinionated template for building web applications, preconfigured with everyt
 
 ## Using this Template
 
+There are two ways to use this template:
+
+### Through GitHub
+
 1. Open this repo in GitHub
 2. At the top right, click the "Use this template" button
 3. Select "Create a new repository"
 4. Follow the instructions
+
+### Through `create-next-app`
+
+```bash
+bun create next-app@latest --example https://github.com/r-portas/app-template
+```
 
 ## Other Documentation
 
