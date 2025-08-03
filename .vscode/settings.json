@@ -1,0 +1,12 @@
+{
+  // Format on save
+  "editor.formatOnSave": true,
+  // Use Prettier as the default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Use the workspace TypeScript version, as its newer than the one bundled with VS Code
+  // **NOTE**: This **won't** apply it automatically, which is why the below setting is also needed
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  // Prompt the user to use the workspace TypeScript version
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
