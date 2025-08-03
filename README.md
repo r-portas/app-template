@@ -2,6 +2,13 @@
 
 An opinionated template for building web applications, preconfigured with everything needs to start building an idea quickly.
 
+## Using this Template
+
+1. Open this repo in GitHub
+2. At the top right, click the "Use this template" button
+3. Select "Create a new repository"
+4. Follow the instructions
+
 ## Other Documentation
 
 - [CHANGELOG.md](./CHANGELOG.md) for the detailed history of the project, update this everytime a feature is completed.
