@@ -19,6 +19,13 @@ There are two ways to use this template:
 bun create next-app@latest --example https://github.com/r-portas/app-template
 ```
 
+After cloning the template, you should:
+
+1. Update the `name` field in `package.json` to match your project name, run a `bun install` to update the lockfile.
+2. Update the page title and description in `app/layout.tsx`.
+3. Update the `README.md` file to reflect your project.
+4. Delete the content from `CHANGELOG.md` and add the first entry.
+
 ## Other Documentation
 
 - [CHANGELOG.md](./CHANGELOG.md) for the detailed history of the project, update this everytime a feature is completed.
