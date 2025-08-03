@@ -9,3 +9,4 @@
 - Add some standard `shadcn/ui` components
 - Add the `AppShell` component, which includes a sidebar and main content area
 - Implemented a mock homepage
+- Configured unit testing with React Testing Library, added sample unit test
