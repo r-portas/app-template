@@ -10,3 +10,4 @@
 - Add the `AppShell` component, which includes a sidebar and main content area
 - Implemented a mock homepage
 - Configured unit testing with React Testing Library, added sample unit test
+- Add `Dockerfile` and `compose.yml` configuration for deployment

@@ -49,3 +49,17 @@ bun update --latest
 The following environment variables should be configured in a `.env.local` file:
 
 - `ABC`: Description
+
+## Deployment
+
+This template contains a preconfigured `Dockerfile` and `compose.yml` for easy deployment via Docker, which can be ran by running the following command:
+
+```bash
+docker compose up
+```
+
+If these aren't needed, they can be removed by running the following:
+
+```bash
+rm Dockerfile compose.yml
+```
