@@ -4,5 +4,6 @@ import Page from "./page";
 
 test("renders the page with the welcome message", () => {
   const { getByText } = render(<Page />);
-  expect(getByText("Good Morning, User")).toBeInTheDocument();
+
+  expect(getByText("App Template")).toBeInTheDocument();
 });
