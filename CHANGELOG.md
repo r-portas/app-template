@@ -14,3 +14,4 @@
 - Add `Dockerfile` and `compose.yml` configuration for deployment
 - Add VS Code configuration files for extensions, settings and tasks
 - Start on some reusable code snippets
+- Added a `not-found.tsx` page
