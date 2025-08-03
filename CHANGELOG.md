@@ -11,3 +11,4 @@
 - Implemented a mock homepage
 - Configured unit testing with React Testing Library, added sample unit test
 - Add `Dockerfile` and `compose.yml` configuration for deployment
+- Add VS Code configuration files for extensions, settings and tasks
