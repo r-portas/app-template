@@ -24,7 +24,8 @@ After cloning the template, you should:
 1. Update the `name` field in `package.json` to match your project name, run a `bun install` to update the lockfile.
 2. Update the page title and description in `app/layout.tsx`.
 3. Update the `README.md` file to reflect your project.
-4. Delete the content from `CHANGELOG.md` and add the first entry.
+4. Update the top of `AGENT.md` to reflect your project.
+5. Delete the content from `CHANGELOG.md` and add the first entry.
 
 ## Other Documentation
 
