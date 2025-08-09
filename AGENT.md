@@ -56,7 +56,7 @@ export function ListItem() {}
 ## UI and Styling
 
 - Prefer to use shadcn/ui components for consistency.
-- When creating links, use the `Link` component from `@/components/ui/Link` to ensure proper styling and behavior. Do not add `target="_blank"` or `rel="noopener noreferrer"` attributes as they are automatically added by the `Link` component.
+- When creating links, use the `Link` component from `@/components/ui/link` to ensure proper styling and behavior. Do not add `target="_blank"` or `rel="noopener noreferrer"` attributes as they are automatically added by the `Link` component.
 - When creating using a Button as a Link, use `Link` component directly from `next/link` and nest the `Link` component inside the `Button` component and add the `asChild` prop to the `Button`, like this:
 
 ```tsx
@@ -65,7 +65,7 @@ export function ListItem() {}
 </Button>
 ```
 
-- For headings and text, use the `Typography` component from `@/components/ui/Typography` to ensure consistent styling across the application, do not use regular tags like `h1` or `p`, for example:
+- For headings and text, use the `Typography` component from `@/components/ui/typography` to ensure consistent styling across the application, do not use regular tags like `h1` or `p`, for example:
 
 ```tsx
 <Typography variant="h1">Heading 1</Typography>
