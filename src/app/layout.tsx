@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fontClassNames} dark`}>
+    <html lang="en" className={`${fontClassNames} antialiased dark`}>
       <body>
         <AppShell>{children}</AppShell>
       </body>
