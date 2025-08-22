@@ -1,6 +1,13 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import {
+  Calendar,
+  Home,
+  Inbox,
+  Search,
+  Settings,
+  type LucideIcon,
+} from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -14,11 +21,17 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 
+interface Item {
+  title: string;
+  url: string;
+  icon: LucideIcon;
+}
+
 // Menu items.
-const items = [
+const items: Item[] = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {

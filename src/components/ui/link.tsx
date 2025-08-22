@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import NextLink from "next/link";
 
-import { AnchorHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
