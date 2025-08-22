@@ -7,8 +7,8 @@
       "",
       "export function $1({ children }: { children: ReactNode }) {",
       "  return <div>{children}</div>;",
-      "};",
-    ],
+      "};"
+    ]
   },
   "React Component Unit Test": {
     "prefix": "rctest",
@@ -20,7 +20,7 @@
       "test(\"renders $1\", () => {",
       "  const { getByText } = render(<$1 />);",
       "  expect(getByText(/$2/i)).toBeInTheDocument();",
-      "});",
-    ],
-  },
+      "});"
+    ]
+  }
 }
