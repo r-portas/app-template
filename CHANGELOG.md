@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-08-30
+
+- Upgraded to Next.js 15.5
+
 ## 2025-08-03
 
 - Created the initial template
