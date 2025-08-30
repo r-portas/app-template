@@ -2,6 +2,7 @@
   "recommendations": [
     "oven.bun-vscode",
     "bradlc.vscode-tailwindcss",
-    "biomejs.biome"
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
   ]
 }
