@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "shadcn": {
+      "command": "bun",
+      "args": ["shadcn", "mcp"]
+    }
+  }
+}

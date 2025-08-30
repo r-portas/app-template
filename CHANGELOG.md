@@ -3,6 +3,7 @@
 ## 2025-08-30
 
 - Upgraded to Next.js 15.5
+- Add shadcn/ui MCP server
 
 ## 2025-08-03
 
