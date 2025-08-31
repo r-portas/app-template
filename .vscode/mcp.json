@@ -3,6 +3,10 @@
     "shadcn": {
       "command": "bun",
       "args": ["shadcn", "mcp"]
+    },
+    "context7": {
+      "command": "bunx",
+      "args": ["-y", "@upstash/context7-mcp"]
     }
   }
 }
