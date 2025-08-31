@@ -40,7 +40,7 @@ export function Sidebar({
     <aside
       className={cn("border-r border-sidebar-border bg-sidebar", className)}
     >
-      <nav className="mt-2 space-y-2 m-1">
+      <nav className="flex flex-col flex-nowrap m-1 gap-1">
         {items.map((item, index) => (
           <SidebarItem key={index} {...item} />
         ))}
