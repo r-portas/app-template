@@ -41,8 +41,8 @@ export function Sidebar({
       className={cn("border-r border-sidebar-border bg-sidebar", className)}
     >
       <nav className="flex flex-col flex-nowrap m-1 gap-1">
-        {items.map((item, index) => (
-          <SidebarItem key={index} {...item} />
+        {items.map((item) => (
+          <SidebarItem key={item.label} {...item} />
         ))}
       </nav>
     </aside>

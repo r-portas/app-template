@@ -27,7 +27,7 @@ const items: Item[] = [
 export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-row min-h-screen">
-      <Sidebar items={items} className="grow" />
+      <Sidebar items={items} className="shrink-0" />
       {children}
     </div>
   );
