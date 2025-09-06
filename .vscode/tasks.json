@@ -3,7 +3,7 @@
   "tasks": [
     {
       "type": "bun",
-      "script": "next dev --turbopack",
+      "script": "--bun next dev --turbopack",
       "problemMatcher": [],
       "label": "Start Dev Server",
       "detail": "Starts the Next.js Dev Server",
