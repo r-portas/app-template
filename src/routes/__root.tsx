@@ -6,6 +6,12 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { CacheProvider } from "@emotion/react";
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
+import createCache from "@emotion/cache";
+import { theme } from "src/lib/theme";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -33,6 +39,19 @@ function RootComponent() {
   );
 }
 
+function Providers({ children }: { children: React.ReactNode }) {
+  const emotionCache = createCache({ key: "css" });
+
+  return (
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </CacheProvider>
+  );
+}
+
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html>
@@ -40,7 +59,9 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        {children}
+        <Providers>
+          <Container component="main">{children}</Container>
+        </Providers>
         <Scripts />
       </body>
     </html>

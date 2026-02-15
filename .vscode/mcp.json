@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "mui-mcp": {
+      "command": "bunx",
+      "args": ["@mui/mcp@0.1.0"],
+      "env": {},
+      "type": "stdio"
+    }
+  },
+  "inputs": []
+}
