@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 const App = () => {
   return (
     <div>
-      <h1>Hello world</h1>
+      <h1 className="text-red-600">Hello world</h1>
       <Button variant="contained">Click me</Button>
     </div>
   );

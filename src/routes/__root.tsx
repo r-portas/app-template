@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import createCache from "@emotion/cache";
 import { theme } from "@/lib/theme";
+import globalCss from "@/global.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -22,6 +23,7 @@ export const Route = createRootRoute({
         title: "App Template",
       },
     ],
+    links: [{ rel: "stylesheet", href: globalCss }],
   }),
   component: RootComponent,
 });
