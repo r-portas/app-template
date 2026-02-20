@@ -1,6 +1,8 @@
 /// <reference types="vite/client" />
 import type { ReactNode } from "react";
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { CacheProvider } from "@emotion/react";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -58,6 +60,15 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
           <Container component="main">{children}</Container>
         </Providers>
         <Scripts />
+        <TanStackDevtools
+          plugins={[
+            {
+              name: "TanStack Router",
+              render: <TanStackRouterDevtoolsPanel />,
+              defaultOpen: false,
+            },
+          ]}
+        />
       </body>
     </html>
   );
