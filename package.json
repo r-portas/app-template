@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "bun --bun vite dev",
     "build": "bun --bun vite build",
-    "preview": "bun --bun vite preview"
+    "preview": "bun --bun vite preview",
+    "lint": "oxlint",
+    "format": "oxfmt"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -24,6 +26,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
+    "oxfmt": "^0.34.0",
+    "oxlint": "^1.49.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1"
   }
