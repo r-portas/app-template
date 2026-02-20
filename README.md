@@ -9,6 +9,8 @@ A modern React application template built with Bun, TanStack Start, and Material
 - **[Material-UI v7](https://mui.com)** - React component library with dark mode enabled
 - **React 19** - Latest React with TypeScript
 - **Vite** - Build tool for fast development
+- **[oxlint](https://oxc.rs/docs/guide/usage/linter)** - Fast linter
+- **[oxfmt](https://oxc.rs/docs/guide/usage/formatter)** - Fast formatter
 
 ## Getting Started
 
@@ -24,6 +26,12 @@ bun build
 
 # Preview production build
 bun preview
+
+# Lint
+bun lint
+
+# Format
+bun format
 ```
 
 ## Features

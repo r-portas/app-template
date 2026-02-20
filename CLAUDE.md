@@ -9,9 +9,17 @@ bun install          # Install dependencies
 bun dev              # Start dev server on port 3000
 bun run build        # Production build
 bun preview          # Preview production build
+bun lint             # Lint with oxlint
+bun format           # Format with oxfmt
 ```
 
 No test framework is configured yet. CI runs `bun run build` on every push via GitHub Actions.
+
+## Linting & Formatting
+
+**Linter**: [oxlint](https://oxc.rs/docs/guide/usage/linter) — config in `.oxlintrc.json`. React and react-perf plugins are enabled.
+
+**Formatter**: [oxfmt](https://oxc.rs/docs/guide/usage/formatter) — config in `.oxfmtrc.json`. Auto-generated files (`*.gen.ts`) are excluded.
 
 ## Architecture
 
@@ -24,6 +32,7 @@ This is a full-stack React app built on **TanStack Start** with **Bun** as the r
 **UI**: Material-UI v7 with Emotion. Always use deep imports from MUI (e.g., `import Button from "@mui/material/Button"`) for tree-shaking.
 
 **Theme** (`src/lib/theme.ts`): Dark mode with a greenish-tinted palette. Two font families via `@fontsource-variable`:
+
 - **Newsreader Variable** (serif) — all headings (h1–h6) and captions
 - **Archivo Variable** (sans-serif) — base font for body text, buttons, and everything else
 
