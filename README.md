@@ -37,7 +37,6 @@ bun format
 ## Features
 
 - Dark mode enabled by default
-- System font stack for optimal performance
 - Deep MUI imports for better tree-shaking and smaller bundle size
 - File-based routing with TanStack Router
 - TypeScript support
