@@ -2,7 +2,7 @@ import { createLink } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import type React from "react";
 
-const ButtonLink = createLink(Button);
+const ButtonRouterLink = createLink(Button);
 
 /**
  * shadcn Button wrapped with TanStack Router for type-safe internal navigation.
@@ -20,6 +20,6 @@ const ButtonLink = createLink(Button);
  * <ButtonLink to="/posts/$id" params={{ id: post.id }} variant="outline">View post</ButtonLink>
  * ```
  */
-export default function ButtonLinkWithPreload(props: React.ComponentProps<typeof ButtonLink>) {
-  return <ButtonLink preload="intent" {...props} />;
+export default function ButtonLink(props: React.ComponentProps<typeof ButtonRouterLink>) {
+  return <ButtonRouterLink preload="intent" {...props} />;
 }

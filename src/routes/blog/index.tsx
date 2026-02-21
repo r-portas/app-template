@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Heading, Lead, Typography } from "src/components/ui/typography";
 import { Card, CardContent, CardFooter, CardHeader } from "src/components/ui/card";
 import { Badge } from "src/components/ui/badge";
@@ -64,7 +64,8 @@ const posts = [
   {
     slug: "post",
     title: "Responsive Type Without Media Queries",
-    excerpt: "Using fluid typography and CSS clamp() to create type scales that adapt smoothly across every viewport.",
+    excerpt:
+      "Using fluid typography and CSS clamp() to create type scales that adapt smoothly across every viewport.",
     category: "CSS",
     author: { name: "Claude Shannon", initials: "CS" },
     date: "Jan 15, 2026",
@@ -78,35 +79,39 @@ function BlogIndex() {
       <Heading level={1} className="mb-3">
         The Blog
       </Heading>
-      <Lead className="mb-8">Thoughts on design, engineering, and the craft of building software.</Lead>
+      <Lead className="mb-8">
+        Thoughts on design, engineering, and the craft of building software.
+      </Lead>
 
       <Separator className="mb-10" />
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post, i) => (
-          <Card key={i} className="flex flex-col justify-between">
-            <CardHeader className="gap-3">
-              <Badge variant="outline" className="w-fit">
-                {post.category}
-              </Badge>
-              <Heading level={3} className="leading-snug">
-                {post.title}
-              </Heading>
-              <Typography variant="muted">{post.excerpt}</Typography>
-            </CardHeader>
-            <CardContent />
-            <CardFooter className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Avatar className="size-7">
-                  <AvatarFallback className="text-xs">{post.author.initials}</AvatarFallback>
-                </Avatar>
-                <Typography variant="body-sm" className="text-muted-foreground">
-                  {post.author.name}
-                </Typography>
-              </div>
-              <Typography variant="caption">{post.date}</Typography>
-            </CardFooter>
-          </Card>
+          <Link key={i} to="/blog/post" preload="intent">
+            <Card className="flex flex-col justify-between">
+              <CardHeader className="gap-3">
+                <Badge variant="outline" className="w-fit">
+                  {post.category}
+                </Badge>
+                <Heading level={3} className="leading-snug">
+                  {post.title}
+                </Heading>
+                <Typography variant="muted">{post.excerpt}</Typography>
+              </CardHeader>
+              <CardContent />
+              <CardFooter className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Avatar className="size-7">
+                    <AvatarFallback className="text-xs">{post.author.initials}</AvatarFallback>
+                  </Avatar>
+                  <Typography variant="body-sm" className="text-muted-foreground">
+                    {post.author.name}
+                  </Typography>
+                </div>
+                <Typography variant="caption">{post.date}</Typography>
+              </CardFooter>
+            </Card>
+          </Link>
         ))}
       </div>
 
