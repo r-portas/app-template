@@ -1,8 +1,8 @@
 {
   "servers": {
-    "mui-mcp": {
+"tanstack": {
       "command": "bunx",
-      "args": ["@mui/mcp@0.1.0"],
+      "args": ["@tanstack/cli", "mcp"],
       "env": {},
       "type": "stdio"
     }

@@ -1,14 +1,15 @@
 # App Template
 
-A modern React application template built with Bun, TanStack Start, and Material-UI.
+A modern React application template built with Bun, TanStack Start, and shadcn/ui.
 
 ## Tech Stack
 
 - **[Bun](https://bun.sh)** - Fast JavaScript runtime and package manager
 - **[TanStack Start](https://tanstack.com/start)** - Full-stack React framework with file-based routing
-- **[Material-UI v7](https://mui.com)** - React component library with dark mode enabled
+- **[shadcn/ui](https://ui.shadcn.com)** - Component library built on Tailwind CSS and Radix UI
 - **React 19** - Latest React with TypeScript
 - **Vite** - Build tool for fast development
+- **[lucide-react](https://lucide.dev)** - Icon library
 - **[oxlint](https://oxc.rs/docs/guide/usage/linter)** - Fast linter
 - **[oxfmt](https://oxc.rs/docs/guide/usage/formatter)** - Fast formatter
 
@@ -22,7 +23,7 @@ bun install
 bun dev
 
 # Build for production
-bun build
+bun run build
 
 # Preview production build
 bun preview
@@ -37,6 +38,8 @@ bun format
 ## Features
 
 - Dark mode enabled by default
-- Deep MUI imports for better tree-shaking and smaller bundle size
 - File-based routing with TanStack Router
-- TypeScript support
+- TypeScript strict mode with path aliases (`@/*` → `src/*`)
+- Two-font typography system: Newsreader (serif, headings) + Archivo (sans-serif, body)
+- Custom `Link` and `ButtonLink` components for type-safe TanStack Router navigation
+- Custom `Typography` component with `Display`, `Heading`, `Lead` variants
