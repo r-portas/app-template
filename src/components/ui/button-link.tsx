@@ -1,10 +1,8 @@
 import { createLink } from "@tanstack/react-router";
-import { Button, type ButtonProps } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import type React from "react";
 
-const ButtonLinkComponent = ({ ref, ...props }: ButtonProps) => <Button ref={ref} {...props} />;
-
-const ButtonLink = createLink(ButtonLinkComponent);
+const ButtonLink = createLink(Button);
 
 /**
  * shadcn Button wrapped with TanStack Router for type-safe internal navigation.
