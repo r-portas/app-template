@@ -90,9 +90,7 @@ function BlogIndex() {
           <Link key={i} to="/blog/post" preload="intent">
             <Card className="flex flex-col justify-between">
               <CardHeader className="gap-3">
-                <Badge variant="outline" className="w-fit">
-                  {post.category}
-                </Badge>
+                <Badge className="w-fit">{post.category}</Badge>
                 <Heading level={3} className="leading-snug">
                   {post.title}
                 </Heading>
