@@ -5,6 +5,12 @@
       "args": ["@mui/mcp@0.1.0"],
       "env": {},
       "type": "stdio"
+    },
+    "tanstack": {
+      "command": "bunx",
+      "args": ["@tanstack/cli", "mcp"],
+      "env": {},
+      "type": "stdio"
     }
   },
   "inputs": []
