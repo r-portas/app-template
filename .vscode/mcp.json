@@ -1,6 +1,6 @@
 {
   "servers": {
-"tanstack": {
+    "tanstack": {
       "command": "bunx",
       "args": ["@tanstack/cli", "mcp"],
       "env": {},

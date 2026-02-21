@@ -1,12 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heading, Typography } from "src/components/ui/typography";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "src/components/ui/card";
-import { Badge } from "src/components/ui/badge";
-import { Separator } from "src/components/ui/separator";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "src/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/components/ui/tabs";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "src/components/ui/select";
 import { Avatar, AvatarFallback } from "src/components/ui/avatar";
+import { Badge } from "src/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "src/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "src/components/ui/select";
+import { Separator } from "src/components/ui/separator";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "src/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/components/ui/tabs";
+import { Heading, Typography } from "src/components/ui/typography";
 
 export const Route = createFileRoute("/dashboard")({
   component: Dashboard,
@@ -20,12 +33,60 @@ const stats = [
 ];
 
 const orders = [
-  { id: "ORD-1024", customer: "Ada Lovelace", email: "ada@example.com", initials: "AL", amount: "$240.00", status: "Paid", date: "Feb 18, 2026" },
-  { id: "ORD-1023", customer: "Grace Hopper", email: "grace@example.com", initials: "GH", amount: "$95.00", status: "Pending", date: "Feb 17, 2026" },
-  { id: "ORD-1022", customer: "Claude Shannon", email: "claude@example.com", initials: "CS", amount: "$530.00", status: "Paid", date: "Feb 17, 2026" },
-  { id: "ORD-1021", customer: "Alan Turing", email: "alan@example.com", initials: "AT", amount: "$180.00", status: "Failed", date: "Feb 16, 2026" },
-  { id: "ORD-1020", customer: "Lise Meitner", email: "lise@example.com", initials: "LM", amount: "$320.00", status: "Paid", date: "Feb 15, 2026" },
-  { id: "ORD-1019", customer: "Rosalind Franklin", email: "ros@example.com", initials: "RF", amount: "$75.00", status: "Pending", date: "Feb 14, 2026" },
+  {
+    id: "ORD-1024",
+    customer: "Ada Lovelace",
+    email: "ada@example.com",
+    initials: "AL",
+    amount: "$240.00",
+    status: "Paid",
+    date: "Feb 18, 2026",
+  },
+  {
+    id: "ORD-1023",
+    customer: "Grace Hopper",
+    email: "grace@example.com",
+    initials: "GH",
+    amount: "$95.00",
+    status: "Pending",
+    date: "Feb 17, 2026",
+  },
+  {
+    id: "ORD-1022",
+    customer: "Claude Shannon",
+    email: "claude@example.com",
+    initials: "CS",
+    amount: "$530.00",
+    status: "Paid",
+    date: "Feb 17, 2026",
+  },
+  {
+    id: "ORD-1021",
+    customer: "Alan Turing",
+    email: "alan@example.com",
+    initials: "AT",
+    amount: "$180.00",
+    status: "Failed",
+    date: "Feb 16, 2026",
+  },
+  {
+    id: "ORD-1020",
+    customer: "Lise Meitner",
+    email: "lise@example.com",
+    initials: "LM",
+    amount: "$320.00",
+    status: "Paid",
+    date: "Feb 15, 2026",
+  },
+  {
+    id: "ORD-1019",
+    customer: "Rosalind Franklin",
+    email: "ros@example.com",
+    initials: "RF",
+    amount: "$75.00",
+    status: "Pending",
+    date: "Feb 14, 2026",
+  },
 ];
 
 const team = [
@@ -45,7 +106,7 @@ function Dashboard() {
   return (
     <div className="py-10">
       {/* Header */}
-      <div className="flex items-start justify-between mb-8">
+      <div className="mb-8 flex items-start justify-between">
         <div>
           <Heading level={1} className="mb-1">
             Dashboard
@@ -66,11 +127,11 @@ function Dashboard() {
       </div>
 
       {/* Stat cards */}
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 mb-8">
+      <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((stat) => (
           <Card key={stat.label}>
             <CardHeader className="pb-2">
-              <CardDescription>{stat.label}</CardDescription>
+              <CardTitle>{stat.label}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-2xl font-bold">{stat.value}</p>
@@ -121,8 +182,8 @@ function Dashboard() {
                             <AvatarFallback className="text-xs">{order.initials}</AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="text-sm font-medium leading-none">{order.customer}</p>
-                            <p className="text-xs text-muted-foreground mt-0.5">{order.email}</p>
+                            <p className="text-sm leading-none font-medium">{order.customer}</p>
+                            <p className="text-muted-foreground mt-0.5 text-xs">{order.email}</p>
                           </div>
                         </div>
                       </TableCell>

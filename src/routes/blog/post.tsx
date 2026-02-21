@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heading, Lead, Typography } from "src/components/ui/typography";
-import { Badge } from "src/components/ui/badge";
 import { Avatar, AvatarFallback } from "src/components/ui/avatar";
+import { Badge } from "src/components/ui/badge";
 import { Separator } from "src/components/ui/separator";
 import {
   Table,
@@ -11,6 +10,8 @@ import {
   TableHeader,
   TableRow,
 } from "src/components/ui/table";
+import { Heading, Lead, Typography } from "src/components/ui/typography";
+
 import ButtonLink from "@/components/ui/button-link";
 
 export const Route = createFileRoute("/blog/post")({
@@ -19,9 +20,9 @@ export const Route = createFileRoute("/blog/post")({
 
 function BlogPost() {
   return (
-    <article className="py-10 max-w-2xl mx-auto">
+    <article className="mx-auto max-w-2xl py-10">
       {/* Meta */}
-      <div className="flex gap-2 mb-6">
+      <div className="mb-6 flex gap-2">
         <Badge variant="outline">Typography</Badge>
         <Badge variant="secondary">6 min read</Badge>
       </div>
@@ -38,11 +39,11 @@ function BlogPost() {
       </Lead>
 
       {/* Author row */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="mb-6 flex items-center gap-3">
         <Avatar className="size-9">
           <AvatarFallback>CS</AvatarFallback>
         </Avatar>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="text-muted-foreground flex items-center gap-2 text-sm">
           <span>Claude Shannon</span>
           <Separator orientation="vertical" className="h-4" />
           <span>Feb 6, 2026</span>
@@ -126,7 +127,7 @@ function BlogPost() {
         </Typography>
 
         {/* Blockquote */}
-        <blockquote className="border-l-2 border-border pl-6 italic">
+        <blockquote className="border-border border-l-2 pl-6 italic">
           <Typography>
             &ldquo;Typography is what language looks like. And how it looks affects how it is read —
             and whether it is read at all.&rdquo;

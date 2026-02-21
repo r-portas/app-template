@@ -15,12 +15,12 @@ const navItems: NavItem[] = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-sm">
+    <header className="border-border bg-background/90 sticky top-0 z-50 border-b backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-14 items-center justify-between">
           <Link
             to="/"
-            className="font-serif text-base font-light tracking-tight text-foreground transition-opacity hover:opacity-70"
+            className="text-foreground font-serif text-base font-light tracking-tight transition-opacity hover:opacity-70"
           >
             App Template
           </Link>
@@ -32,7 +32,7 @@ export function Navbar() {
                   <Link
                     to={to}
                     activeOptions={exact ? { exact: true } : undefined}
-                    className="rounded-sm px-3 py-1.5 text-xs font-medium tracking-widest uppercase transition-colors hover:bg-accent hover:text-foreground"
+                    className="hover:bg-accent hover:text-foreground rounded-sm px-3 py-1.5 text-xs font-medium tracking-widest uppercase transition-colors"
                     activeProps={{ className: "bg-accent text-foreground" }}
                     inactiveProps={{ className: "text-muted-foreground" }}
                     preload="intent"

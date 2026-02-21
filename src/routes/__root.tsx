@@ -1,8 +1,10 @@
+import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 /// <reference types="vite/client" />
 import type { ReactNode } from "react";
-import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-import globalCss from "@/global.css?url";
+
 import { Navbar } from "@/components/navbar";
+
+import globalCss from "@/global.css?url";
 
 export const Route = createRootRoute({
   head: () => ({

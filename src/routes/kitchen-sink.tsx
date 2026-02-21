@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Display, Heading, Lead, Typography } from "src/components/ui/typography";
+import { Avatar, AvatarFallback, AvatarImage } from "src/components/ui/avatar";
+import { Badge } from "src/components/ui/badge";
 import { Button } from "src/components/ui/button";
 import {
   Card,
@@ -9,9 +10,15 @@ import {
   CardHeader,
   CardTitle,
 } from "src/components/ui/card";
-import { Badge } from "src/components/ui/badge";
+import { Input } from "src/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "src/components/ui/select";
 import { Separator } from "src/components/ui/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "src/components/ui/avatar";
 import {
   Table,
   TableBody,
@@ -22,14 +29,7 @@ import {
   TableRow,
 } from "src/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/components/ui/tabs";
-import { Input } from "src/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "src/components/ui/select";
+import { Display, Heading, Lead, Typography } from "src/components/ui/typography";
 
 export const Route = createFileRoute("/kitchen-sink")({
   component: KitchenSink,
@@ -54,8 +54,9 @@ function KitchenSink() {
         A visual reference for all components and typography in this theme.
       </Lead>
       <Typography variant="muted">
-        Use this page to tweak styles in <code className="font-mono text-xs">global.css</code> and
-        see changes immediately.
+        Use this page to tweak styles in{" "}
+        <code className="bg-card rounded p-1 font-mono text-xs">global.css</code> and see changes
+        immediately.
       </Typography>
 
       <Separator className="mt-8" />
@@ -121,7 +122,7 @@ function KitchenSink() {
 
       {/* Form Controls */}
       <Section title="Form Controls">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-lg">
+        <div className="grid max-w-lg grid-cols-1 gap-4 sm:grid-cols-2">
           <Input placeholder="Default input" />
           <Input placeholder="Disabled input" disabled />
           <Input type="email" placeholder="Email address" />
@@ -145,8 +146,8 @@ function KitchenSink() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <Card>
             <CardHeader>
-              <CardTitle>Card Title</CardTitle>
               <CardDescription>Supporting description text for the card.</CardDescription>
+              <CardTitle>Card Title</CardTitle>
             </CardHeader>
             <CardContent>
               <Typography variant="body-sm">
@@ -162,8 +163,8 @@ function KitchenSink() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Metrics</CardTitle>
               <CardDescription>This month</CardDescription>
+              <CardTitle>Metrics</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">$12,400</p>
@@ -176,7 +177,7 @@ function KitchenSink() {
             <CardHeader>
               <CardTitle>Status</CardTitle>
             </CardHeader>
-            <CardContent className="flex gap-2 flex-wrap">
+            <CardContent className="flex flex-wrap gap-2">
               <Badge>Active</Badge>
               <Badge variant="secondary">Pending</Badge>
               <Badge variant="outline">Draft</Badge>

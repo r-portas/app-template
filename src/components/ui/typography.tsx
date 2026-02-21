@@ -1,7 +1,6 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
-
+import * as React from "react";
 import { cn } from "src/lib/utils";
 
 // ---------------------------------------------------------------------------
@@ -9,7 +8,9 @@ import { cn } from "src/lib/utils";
 // ---------------------------------------------------------------------------
 
 function Display({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <Heading level={1} className={cn("text-6xl tracking-tighter", className)} {...props} />;
+  return (
+    <Heading level={1} className={cn("text-8xl tracking-tighter italic", className)} {...props} />
+  );
 }
 
 // ---------------------------------------------------------------------------
