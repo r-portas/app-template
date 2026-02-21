@@ -46,6 +46,12 @@ This is a full-stack React app built on **TanStack Start** with **Bun** as the r
 
 **Path aliases**: `@/*` maps to `src/*` via `vite-tsconfig-paths` (e.g., `import { cn } from "@/lib/utils"`).
 
+## Typography
+
+Always use the components from `src/components/ui/typography.tsx` (`Display`, `Heading`, `Lead`, `Typography`) rather than raw HTML elements with inline Tailwind classes. Never write a raw `<h1>`–`<h6>` or `<p>` with custom class overrides when a typography component exists.
+
+If a use case doesn't fit the existing typography components — for example, a label or eyebrow style that conflicts with `Heading`'s serif/large defaults — **do not work around it silently**. Instead, explain the mismatch and ask how to handle it before writing any code.
+
 ## TypeScript
 
 Strict mode is enabled with `noUnusedLocals` and `noUnusedParameters`. Target is ES2022.
