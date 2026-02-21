@@ -3,6 +3,7 @@ import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-r
 import type { ReactNode } from "react";
 
 import { Navbar } from "@/components/navbar";
+import { APP_NAME } from "@/constants";
 
 import globalCss from "@/global.css?url";
 
@@ -17,7 +18,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "App Template",
+        title: APP_NAME,
       },
     ],
     links: [{ rel: "stylesheet", href: globalCss }],

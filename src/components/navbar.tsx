@@ -1,5 +1,9 @@
 import { Link } from "@tanstack/react-router";
 
+import { APP_NAME } from "@/constants";
+
+import ButtonLink from "./ui/button-link";
+
 type NavItem = {
   to: "/" | "/dashboard" | "/blog" | "/kitchen-sink";
   label: string;
@@ -13,6 +17,20 @@ const navItems: NavItem[] = [
   { to: "/kitchen-sink", label: "Kitchen Sink" },
 ];
 
+function NavLink({ to, label, exact }: NavItem) {
+  return (
+    <ButtonLink
+      variant="ghost"
+      to={to}
+      activeOptions={exact ? { exact: true } : undefined}
+      activeProps={{ variant: "default" }}
+      preload="intent"
+    >
+      {label}
+    </ButtonLink>
+  );
+}
+
 export function Navbar() {
   return (
     <header className="border-border bg-background/90 sticky top-0 z-50 border-b backdrop-blur-sm">
@@ -20,25 +38,16 @@ export function Navbar() {
         <div className="flex h-14 items-center justify-between">
           <Link
             to="/"
-            className="text-foreground font-serif text-base font-light tracking-tight transition-opacity hover:opacity-70"
+            className="font-serif text-xl font-light tracking-tight transition-opacity hover:opacity-70"
           >
-            App Template
+            {APP_NAME}
           </Link>
 
           <nav aria-label="Main navigation">
             <ul className="flex items-center gap-1" role="list">
               {navItems.map(({ to, label, exact }) => (
                 <li key={to}>
-                  <Link
-                    to={to}
-                    activeOptions={exact ? { exact: true } : undefined}
-                    className="hover:bg-accent hover:text-foreground rounded-sm px-3 py-1.5 text-xs font-medium tracking-widest uppercase transition-colors"
-                    activeProps={{ className: "bg-accent text-foreground" }}
-                    inactiveProps={{ className: "text-muted-foreground" }}
-                    preload="intent"
-                  >
-                    {label}
-                  </Link>
+                  <NavLink to={to} label={label} exact={exact} />
                 </li>
               ))}
             </ul>
