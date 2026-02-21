@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import createCache from "@emotion/cache";
-import { theme } from "src/lib/theme";
+import { theme } from "@/lib/theme";
 
 export const Route = createRootRoute({
   head: () => ({
