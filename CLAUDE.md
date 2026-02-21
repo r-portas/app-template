@@ -36,11 +36,15 @@ This is a full-stack React app built on **TanStack Start** with **Bun** as the r
 - **Newsreader Variable** (serif) — all headings (h1–h6) and captions
 - **Archivo Variable** (sans-serif) — base font for body text, buttons, and everything else
 
-Font CSS is imported in `theme.ts`. Key component defaults: ripple disabled, buttons use sentence case, chips are pill-shaped and outlined, cards have no elevation.
+**Custom components**: Three custom components live alongside the shadcn components in `src/components/ui/`:
 
-**Custom Link**: `src/components/link.tsx` wraps a plain `<a>` with TanStack Router's `createLink` for type-safe navigation. Use this instead of raw `<a>` tags for internal routes. `src/components/button-link.tsx` does the same with the shadcn `Button`.
+- `link.tsx` — wraps a plain `<a>` with TanStack Router's `createLink` for type-safe navigation. Use this instead of raw `<a>` tags for internal routes.
+- `button-link.tsx` — does the same with the shadcn `Button`.
+- `typography.tsx` — provides `Display`, `Heading`, `Lead`, and `Typography` components with serif/sans-serif variants.
 
-**Path aliases**: `src/` is available as a base path via `vite-tsconfig-paths` (e.g., `import { theme } from "src/lib/theme"`).
+**Icons**: [lucide-react](https://lucide.dev) is installed and used throughout.
+
+**Path aliases**: `@/*` maps to `src/*` via `vite-tsconfig-paths` (e.g., `import { cn } from "@/lib/utils"`).
 
 ## TypeScript
 
