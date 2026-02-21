@@ -10,6 +10,4 @@
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
   },
-  // Prevent auto-importing from MUI barrel files
-  "typescript.preferences.autoImportSpecifierExcludeRegexes": ["^@mui/[^/]+$"]
 }

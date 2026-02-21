@@ -1,12 +1,14 @@
 import { createLink } from "@tanstack/react-router";
-import MuiLink from "@mui/material/Link";
 
-// See {@link https://tanstack.com/router/latest/docs/framework/react/guide/custom-link#mui-example}
-const Link = createLink(MuiLink);
+const LinkComponent = ({ ref, ...props }: React.ComponentPropsWithRef<"a">) => (
+  <a ref={ref} {...props} className="underline underline-offset-4 hover:text-primary" />
+);
+
+const Link = createLink(LinkComponent);
 
 /**
- * MUI Link wrapped with TanStack Router for type-safe internal navigation.
- * Use this instead of MUI's Link or a plain `<a>` tag when linking to internal routes.
+ * Plain anchor wrapped with TanStack Router for type-safe internal navigation.
+ * Use this instead of a plain `<a>` tag when linking to internal routes.
  *
  * @example
  * Basic link:

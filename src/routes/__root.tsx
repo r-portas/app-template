@@ -1,12 +1,6 @@
 /// <reference types="vite/client" />
 import type { ReactNode } from "react";
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-import { CacheProvider } from "@emotion/react";
-import Container from "@mui/material/Container";
-import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
-import createCache from "@emotion/cache";
-import { theme } from "@/lib/theme";
 import globalCss from "@/global.css?url";
 
 export const Route = createRootRoute({
@@ -36,19 +30,6 @@ function RootComponent() {
   );
 }
 
-function Providers({ children }: { children: React.ReactNode }) {
-  const emotionCache = createCache({ key: "css" });
-
-  return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
-    </CacheProvider>
-  );
-}
-
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html>
@@ -56,9 +37,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        <Providers>
-          <Container component="main">{children}</Container>
-        </Providers>
+        <main className="container mx-auto px-4">{children}</main>
         <Scripts />
       </body>
     </html>

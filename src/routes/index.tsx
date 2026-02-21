@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import Button from "@mui/material/Button";
+import { Button } from "@/components/ui/button";
 
 const App = () => {
   return (
     <div>
-      <h1 className="text-red-600">Hello world</h1>
-      <Button variant="contained">Click me</Button>
+      <h1 className="text-red-600 text-5xl">Hello world</h1>
+      <Button>Click me</Button>
     </div>
   );
 };
