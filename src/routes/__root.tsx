@@ -2,6 +2,7 @@
 import type { ReactNode } from "react";
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import globalCss from "@/global.css?url";
+import { Navbar } from "@/components/navbar";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -37,6 +38,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
+        <Navbar />
         <main className="container mx-auto px-4">{children}</main>
         <Scripts />
       </body>
