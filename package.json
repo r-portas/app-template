@@ -13,7 +13,7 @@
     "@fontsource-variable/archivo": "^5.2.8",
     "@fontsource-variable/newsreader": "^5.2.10",
     "@tanstack/react-router": "^1.162.6",
-    "@tanstack/react-start": "^1.162.6",
+    "@tanstack/react-start": "^1.162.7",
     "@tanstack/router-plugin": "^1.162.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
