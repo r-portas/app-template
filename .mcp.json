@@ -2,7 +2,7 @@
   "mcpServers": {
     "shadcn": {
       "command": "bunx",
-      "args": ["shadcn@latest@latest", "mcp"]
+      "args": ["shadcn@latest", "mcp"]
     },
     "tanstack": {
       "command": "bunx",
