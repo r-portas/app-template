@@ -2,11 +2,11 @@
   "mcpServers": {
     "shadcn": {
       "command": "bunx",
-      "args": ["shadcn@latest", "mcp"]
+      "args": ["shadcn@latest@latest", "mcp"]
     },
     "tanstack": {
       "command": "bunx",
-      "args": ["@tanstack/cli", "mcp"]
+      "args": ["@tanstack/cli@latest", "mcp"]
     }
   }
 }

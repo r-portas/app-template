@@ -15,26 +15,13 @@ bun format           # Format with oxfmt
 
 No test framework is configured yet. CI runs `bun run build` on every push via GitHub Actions.
 
-## Linting & Formatting
-
-**Linter**: [oxlint](https://oxc.rs/docs/guide/usage/linter) — config in `.oxlintrc.json`. React and react-perf plugins are enabled.
-
-**Formatter**: [oxfmt](https://oxc.rs/docs/guide/usage/formatter) — config in `.oxfmtrc.json`. Auto-generated files (`*.gen.ts`) are excluded.
-
 ## Architecture
 
 This is a full-stack React app built on **TanStack Start** with **Bun** as the runtime/package manager.
 
 **Routing**: File-based routing via TanStack Router. Route files live in `src/routes/`. The file `src/routeTree.gen.ts` is auto-generated — never edit it manually. Add new routes by creating files in `src/routes/` following TanStack Router's file-based conventions.
 
-**Root layout** (`src/routes/__root.tsx`): Sets up the HTML document. All routes render inside a `<main className="container mx-auto px-4">` via `<Outlet>`. Tailwind preflight handles the CSS reset.
-
 **UI**: [shadcn/ui](https://ui.shadcn.com) (new-york style) with Tailwind CSS v4. Components live in `src/components/ui/` and are added via the shadcn CLI (`bunx shadcn@latest add <component>`). Use the `shadcn` MCP server to browse and add components.
-
-**Theme** (`src/global.css`): Dark mode with a greenish-tinted palette defined as CSS variables. Two font families via `@fontsource-variable`:
-
-- **Newsreader Variable** (serif) — all headings (h1–h6) and captions
-- **Archivo Variable** (sans-serif) — base font for body text, buttons, and everything else
 
 **Custom components**: Three custom components live alongside the shadcn components in `src/components/ui/`:
 
