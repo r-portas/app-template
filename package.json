@@ -7,15 +7,14 @@
     "build": "bun --bun vite build",
     "preview": "bun --bun vite preview",
     "lint": "oxlint",
-    "format": "oxfmt",
-    "update": "bun update -i --latest"
+    "format": "oxfmt"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.2.8",
     "@fontsource-variable/newsreader": "^5.2.10",
-    "@tanstack/react-router": "^1.162.9",
-    "@tanstack/react-start": "^1.162.9",
-    "@tanstack/router-plugin": "^1.162.9",
+    "@tanstack/react-router": "^1.163.2",
+    "@tanstack/react-start": "^1.163.2",
+    "@tanstack/router-plugin": "^1.163.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.575.0",
