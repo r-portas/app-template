@@ -1,5 +1,4 @@
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-/// <reference types="vite/client" />
 import type { ReactNode } from "react";
 
 import { Navbar } from "@/components/navbar";
