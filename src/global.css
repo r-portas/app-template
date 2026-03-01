@@ -49,6 +49,7 @@
 }
 
 :root {
+  color-scheme: dark; /* Tell the browser to use dark mode for the scrollbars */
   --radius: 0.5rem;
   --background: #191c19;
   --foreground: #f6fff6;

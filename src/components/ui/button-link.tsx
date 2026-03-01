@@ -1,9 +1,10 @@
-import { createLink } from "@tanstack/react-router";
-import type React from "react";
+import { Link, type LinkProps } from "@tanstack/react-router";
+import { type ComponentProps } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "./button";
 
-const ButtonRouterLink = createLink(Button);
+interface ButtonLinkProps
+  extends LinkProps, Pick<ComponentProps<typeof Button>, "variant" | "size" | "className"> {}
 
 /**
  * shadcn Button wrapped with TanStack Router for type-safe internal navigation.
@@ -21,6 +22,10 @@ const ButtonRouterLink = createLink(Button);
  * <ButtonLink to="/posts/$id" params={{ id: post.id }} variant="outline">View post</ButtonLink>
  * ```
  */
-export default function ButtonLink(props: React.ComponentProps<typeof ButtonRouterLink>) {
-  return <ButtonRouterLink preload="intent" {...props} />;
+export default function ButtonLink({ variant, size, className, ...linkProps }: ButtonLinkProps) {
+  return (
+    <Button variant={variant} size={size} className={className} asChild>
+      <Link preload="intent" {...linkProps} />
+    </Button>
+  );
 }
