@@ -1,10 +1,16 @@
-import { Link, type LinkProps } from "@tanstack/react-router";
+import { createLink } from "@tanstack/react-router";
+import type { VariantProps } from "class-variance-authority";
 import { type ComponentProps } from "react";
 
-import { Button } from "./button";
+import { Button, buttonVariants } from "./button";
 
-interface ButtonLinkProps
-  extends LinkProps, Pick<ComponentProps<typeof Button>, "variant" | "size" | "className"> {}
+type ButtonLinkInnerProps = ComponentProps<"a"> & VariantProps<typeof buttonVariants>;
+
+const ButtonLinkInner = ({ ref, variant, size, className, ...props }: ButtonLinkInnerProps) => (
+  <Button variant={variant} size={size} className={className} asChild>
+    <a ref={ref} {...props} />
+  </Button>
+);
 
 /**
  * shadcn Button wrapped with TanStack Router for type-safe internal navigation.
@@ -13,19 +19,15 @@ interface ButtonLinkProps
  * @example
  * Basic button link:
  * ```tsx
- * <ButtonLink to="/about">Go to About</ButtonLink>
+ * <ButtonLink to="/about" preload="intent">Go to About</ButtonLink>
  * ```
  *
  * @example
  * Button link with a route param:
  * ```tsx
- * <ButtonLink to="/posts/$id" params={{ id: post.id }} variant="outline">View post</ButtonLink>
+ * <ButtonLink to="/posts/$id" params={{ id: post.id }} variant="outline" preload="intent">View post</ButtonLink>
  * ```
  */
-export default function ButtonLink({ variant, size, className, ...linkProps }: ButtonLinkProps) {
-  return (
-    <Button variant={variant} size={size} className={className} asChild>
-      <Link preload="intent" {...linkProps} />
-    </Button>
-  );
-}
+const ButtonLink = createLink(ButtonLinkInner);
+
+export default ButtonLink;
