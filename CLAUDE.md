@@ -48,4 +48,3 @@ Strict mode is enabled with `noUnusedLocals` and `noUnusedParameters`. Target is
 Two MCP servers are available:
 
 - **shadcn**: Use `mcp__shadcn__*` tools to search, view, and add shadcn/ui components. Key tools: `search_items_in_registries`, `view_items_in_registries`, `get_item_examples_from_registries`, `get_add_command_for_items`.
-- **tanstack**: Use `mcp__tanstack__*` tools to browse TanStack docs, search documentation, list add-ons, and get ecosystem recommendations. Key tools: `tanstack_doc`, `tanstack_search_docs`, `tanstack_list_libraries`.
