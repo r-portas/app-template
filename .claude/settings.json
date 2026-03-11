@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(bun *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(file *)",
+      "Bash(strings *)",
+      "Bash(cat *)",
+      "mcp__lighthouse__*",
+      "mcp__playwright__*",
+      "mcp__shadcn__*"
+    ]
+  },
+  "enableAllProjectMcpServers": true
+}
