@@ -1,15 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Avatar, AvatarFallback } from "src/components/ui/avatar";
-import { Badge } from "src/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "src/components/ui/card";
+
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "src/components/ui/select";
-import { Separator } from "src/components/ui/separator";
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 import {
   Table,
   TableBody,
@@ -17,9 +18,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "src/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/components/ui/tabs";
-import { Heading, Typography } from "src/components/ui/typography";
+} from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Heading, Typography } from "@/components/ui/typography";
 
 export const Route = createFileRoute("/dashboard")({
   component: Dashboard,

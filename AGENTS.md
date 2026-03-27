@@ -31,9 +31,11 @@ The following MCP servers are available:
 - **shadcn**: Use `mcp__shadcn__*` tools to search, view, and add shadcn/ui components. Key tools: `search_items_in_registries`, `view_items_in_registries`, `get_item_examples_from_registries`, `get_add_command_for_items`.
 
 <!-- intent-skills:start -->
+
 # Skill mappings - when working in these areas, load the linked skill file into context.
 
 skills:
+
 - task: "Adding or modifying routes (new pages, layouts, nested routes)"
   load: "node_modules/@tanstack/router-core/skills/router-core/SKILL.md"
 - task: "Adding or modifying routes (bundler plugin config, autoCodeSplitting)"
@@ -49,5 +51,5 @@ skills:
 - task: "Building UI components, especially navigation components using createLink or ButtonLink"
   load: "node_modules/@tanstack/router-core/skills/router-core/navigation/SKILL.md"
 - task: "Building UI components with React and TanStack Start (React-specific imports, hooks)"
-  load: "node_modules/@tanstack/react-start/skills/react-start/SKILL.md"
+load: "node_modules/@tanstack/react-start/skills/react-start/SKILL.md"
 <!-- intent-skills:end -->

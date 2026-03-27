@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Avatar, AvatarFallback } from "src/components/ui/avatar";
-import { Badge } from "src/components/ui/badge";
-import { Separator } from "src/components/ui/separator";
+
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import ButtonLink from "@/components/ui/button-link";
+import { Separator } from "@/components/ui/separator";
 import {
   Table,
   TableBody,
@@ -9,10 +11,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "src/components/ui/table";
-import { Heading, Lead, Typography } from "src/components/ui/typography";
-
-import ButtonLink from "@/components/ui/button-link";
+} from "@/components/ui/table";
+import { Heading, Lead, Typography } from "@/components/ui/typography";
 
 export const Route = createFileRoute("/blog/post")({
   component: BlogPost,

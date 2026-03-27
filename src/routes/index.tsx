@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Badge } from "src/components/ui/badge";
-import { Button } from "src/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "src/components/ui/card";
-import { Separator } from "src/components/ui/separator";
-import { Display, Heading, Lead, Typography } from "src/components/ui/typography";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Display, Heading, Lead, Typography } from "@/components/ui/typography";
 
 export const Route = createFileRoute("/")({
   component: Landing,

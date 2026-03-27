@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Avatar, AvatarFallback } from "src/components/ui/avatar";
-import { Badge } from "src/components/ui/badge";
-import { Button } from "src/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "src/components/ui/card";
-import { Separator } from "src/components/ui/separator";
-import { Heading, Lead, Typography } from "src/components/ui/typography";
+
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Heading, Lead, Typography } from "@/components/ui/typography";
 
 export const Route = createFileRoute("/blog/")({
   component: BlogIndex,

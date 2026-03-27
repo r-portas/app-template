@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Avatar, AvatarFallback, AvatarImage } from "src/components/ui/avatar";
-import { Badge } from "src/components/ui/badge";
-import { Button } from "src/components/ui/button";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,16 +10,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "src/components/ui/card";
-import { Input } from "src/components/ui/input";
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "src/components/ui/select";
-import { Separator } from "src/components/ui/separator";
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 import {
   Table,
   TableBody,
@@ -27,9 +28,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "src/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/components/ui/tabs";
-import { Display, Heading, Lead, Typography } from "src/components/ui/typography";
+} from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Display, Heading, Lead, Typography } from "@/components/ui/typography";
 
 export const Route = createFileRoute("/kitchen-sink")({
   component: KitchenSink,
