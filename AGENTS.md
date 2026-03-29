@@ -1,5 +1,15 @@
 # AGENTS.md
 
+## Commands
+
+```bash
+bun dev        # Start dev server
+bun build      # Production build
+bun preview    # Preview production build
+bun lint       # Lint with oxlint
+bun format     # Format with oxfmt
+```
+
 ## Architecture
 
 This is a full-stack React app built on **TanStack Start** with **Bun** as the runtime/package manager.
@@ -12,9 +22,11 @@ This is a full-stack React app built on **TanStack Start** with **Bun** as the r
 
 - `link.tsx` — wraps a plain `<a>` with TanStack Router's `createLink` for type-safe navigation. Use this instead of raw `<a>` tags for internal routes.
 - `button-link.tsx` — does the same with the shadcn `Button`.
-- `typography.tsx` — provides `Display`, `Heading`, `Lead`, and `Typography` components with serif/sans-serif variants.
+- `typography.tsx` — provides `Display`, `Heading`, `Lead`, and `Typography` components with serif/sans-serif variants. Serif uses **Newsreader**, sans-serif uses **Archivo** (both loaded via `@fontsource-variable`).
 
 **Icons**: [lucide-react](https://lucide.dev) is installed and used throughout.
+
+**Linting/Formatting**: `oxlint` (not ESLint) and `oxfmt` (not Prettier). Run via `bun lint` / `bun format`.
 
 **Path aliases**: `@/*` maps to `src/*` (e.g., `import { cn } from "@/lib/utils"`).
 
