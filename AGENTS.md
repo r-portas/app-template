@@ -51,5 +51,5 @@ skills:
 - task: "Building UI components, especially navigation components using createLink or ButtonLink"
   load: "node_modules/@tanstack/router-core/skills/router-core/navigation/SKILL.md"
 - task: "Building UI components with React and TanStack Start (React-specific imports, hooks)"
-load: "node_modules/@tanstack/react-start/skills/react-start/SKILL.md"
+  load: "node_modules/@tanstack/react-start/skills/react-start/SKILL.md"
 <!-- intent-skills:end -->

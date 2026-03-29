@@ -9,9 +9,7 @@ import { cn } from "@/lib/utils";
 // ---------------------------------------------------------------------------
 
 function Display({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return (
-    <Heading level={1} className={cn("text-8xl tracking-tighter italic", className)} {...props} />
-  );
+  return <Heading level={1} className={cn("text-8xl tracking-tighter", className)} {...props} />;
 }
 
 // ---------------------------------------------------------------------------
