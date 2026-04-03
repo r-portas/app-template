@@ -8,6 +8,7 @@ bun build      # Production build
 bun preview    # Preview production build
 bun lint       # Lint with oxlint
 bun format     # Format with oxfmt
+bun typecheck  # Type-check with tsc --noEmit
 ```
 
 ## Architecture
@@ -27,6 +28,8 @@ This is a full-stack React app built on **TanStack Start** with **Bun** as the r
 **Icons**: [lucide-react](https://lucide.dev) is installed and used throughout.
 
 **Linting/Formatting**: `oxlint` (not ESLint) and `oxfmt` (not Prettier). Run via `bun lint` / `bun format`.
+
+**After making code changes**: Always run `bun typecheck` to verify there are no type errors.
 
 **Path aliases**: `@/*` maps to `src/*` (e.g., `import { cn } from "@/lib/utils"`).
 
