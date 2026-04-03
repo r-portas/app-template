@@ -44,7 +44,7 @@ The following MCP servers are available:
 
 <!-- intent-skills:start -->
 
-# Skill mappings - when working in these areas, load the linked skill file into context.
+## Skill mappings - when working in these areas, load the linked skill file into context.
 
 skills:
 

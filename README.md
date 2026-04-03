@@ -2,8 +2,6 @@
 
 A modern React application template built with Bun, TanStack Start, and shadcn/ui.
 
-![Screenshot of the app template](./docs/screenshot.png)
-
 ## Features
 
 - Dark mode enabled by default

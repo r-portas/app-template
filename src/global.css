@@ -5,6 +5,9 @@
 @import "@fontsource-variable/newsreader";
 
 @theme inline {
+  --font-sans: "Archivo Variable", sans-serif;
+  --font-serif: "Newsreader Variable", serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -43,8 +46,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: "Archivo Variable", sans-serif;
-  --font-serif: "Newsreader Variable", serif;
 }
 
 :root {

@@ -1,7 +1,9 @@
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-import { Navbar } from "@/components/navbar";
+import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_NAME } from "@/constants";
 
 import globalCss from "@/global.css?url";
@@ -33,6 +35,14 @@ function RootComponent() {
   );
 }
 
+function Providers({ children }: { children: ReactNode }) {
+  return (
+    <TooltipProvider>
+      <SidebarProvider>{children}</SidebarProvider>
+    </TooltipProvider>
+  );
+}
+
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html>
@@ -40,8 +50,10 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        <Navbar />
-        <main className="container mx-auto px-4">{children}</main>
+        <Providers>
+          <AppSidebar />
+          <main className="flex-1 p-6">{children}</main>
+        </Providers>
         <Scripts />
       </body>
     </html>
