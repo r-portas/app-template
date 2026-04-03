@@ -10,19 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as KitchenSinkRouteImport } from './routes/kitchen-sink'
-import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BlogIndexRouteImport } from './routes/blog/index'
-import { Route as BlogPostRouteImport } from './routes/blog/post'
 
 const KitchenSinkRoute = KitchenSinkRouteImport.update({
   id: '/kitchen-sink',
   path: '/kitchen-sink',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -30,59 +22,31 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogPostRoute = BlogPostRouteImport.update({
-  id: '/blog/post',
-  path: '/blog/post',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
   '/kitchen-sink': typeof KitchenSinkRoute
-  '/blog/post': typeof BlogPostRoute
-  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
   '/kitchen-sink': typeof KitchenSinkRoute
-  '/blog/post': typeof BlogPostRoute
-  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
   '/kitchen-sink': typeof KitchenSinkRoute
-  '/blog/post': typeof BlogPostRoute
-  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/kitchen-sink' | '/blog/post' | '/blog/'
+  fullPaths: '/' | '/kitchen-sink'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/kitchen-sink' | '/blog/post' | '/blog'
-  id:
-    | '__root__'
-    | '/'
-    | '/dashboard'
-    | '/kitchen-sink'
-    | '/blog/post'
-    | '/blog/'
+  to: '/' | '/kitchen-sink'
+  id: '__root__' | '/' | '/kitchen-sink'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DashboardRoute: typeof DashboardRoute
   KitchenSinkRoute: typeof KitchenSinkRoute
-  BlogPostRoute: typeof BlogPostRoute
-  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -94,13 +58,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KitchenSinkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -108,29 +65,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/post': {
-      id: '/blog/post'
-      path: '/blog/post'
-      fullPath: '/blog/post'
-      preLoaderRoute: typeof BlogPostRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DashboardRoute: DashboardRoute,
   KitchenSinkRoute: KitchenSinkRoute,
-  BlogPostRoute: BlogPostRoute,
-  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

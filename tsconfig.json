@@ -1,28 +1,34 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "vite.config.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
+    /* Language */
     "target": "ES2022",
-    "jsx": "react-jsx",
-    "module": "ESNext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["vite/client", "bun"],
+    "jsx": "react-jsx",
 
-    /* Bundler mode */
+    /* Modules */
+    "module": "ESNext",
     "moduleResolution": "bundler",
+    "verbatimModuleSyntax": false, // Disabled: can cause server bundles to leak into client bundles with TanStack Start
+    "isolatedModules": true,
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    /* Emit */
     "noEmit": true,
 
-    /* Linting */
+    /* Types */
+    "types": ["vite/client", "bun"],
     "skipLibCheck": true,
+
+    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "noUncheckedIndexedAccess": true
   }
 }
