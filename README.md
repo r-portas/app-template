@@ -22,6 +22,20 @@ A modern React application template built with Bun, TanStack Start, and shadcn/u
 - **[oxlint](https://oxc.rs/docs/guide/usage/linter)** - Fast linter
 - **[oxfmt](https://oxc.rs/docs/guide/usage/formatter)** - Fast formatter
 
+## Getting Started
+
+```bash
+bunx --bun gitpick r-portas/app-template my-project
+```
+
+Then add your git remote and start building:
+
+```bash
+git init
+git remote add origin <your-repo-url>
+bun dev
+```
+
 ## Development
 
 ```bash
