@@ -1,5 +1,13 @@
 # CLAUDE.md
 
+## Getting started
+
+After cloning this template, update the following before building:
+
+1. **App name** — change `APP_NAME` in `src/constants.ts` from `"App Template"` to your app's name. It's used in the document title and anywhere the app name is displayed.
+2. **Sidebar links** — update `src/components/app-sidebar.tsx` to reflect your app's routes. Remove the Kitchen Sink link once you no longer need it.
+3. **Delete the kitchen sink** — `src/routes/kitchen-sink.tsx` is a component showcase for reference. Delete it when you're ready.
+
 ## Commands
 
 ```bash
