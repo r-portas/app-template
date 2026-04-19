@@ -4,7 +4,7 @@
   "compilerOptions": {
     /* Language */
     "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
 
     /* Modules */
@@ -19,6 +19,8 @@
 
     /* Emit */
     "noEmit": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
 
     /* Types */
     "types": ["vite/client", "bun"],

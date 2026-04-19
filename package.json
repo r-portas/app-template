@@ -9,7 +9,7 @@
     "shadcn": "shadcn",
     "lint": "oxlint",
     "format": "oxfmt",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.2.8",
