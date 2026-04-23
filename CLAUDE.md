@@ -55,38 +55,12 @@ The following MCP servers are available:
 
 <!-- intent-skills:start -->
 
-## Skill mappings - when working in these areas, load the linked skill file into context.
+## Skill Loading
 
-skills:
+Before substantial work:
 
-- task: "Adding or modifying routes (new pages, layouts, nested routes)"
-  load: "node_modules/@tanstack/router-core/skills/router-core/SKILL.md"
-- task: "Adding or modifying routes (bundler plugin config, autoCodeSplitting)"
-  load: "node_modules/@tanstack/router-plugin/skills/router-plugin/SKILL.md"
-- task: "Fetching data in routes (loaders, caching, pending/error states)"
-  load: "node_modules/@tanstack/router-core/skills/router-core/data-loading/SKILL.md"
-- task: "Writing server functions or making backend calls from the client"
-  load: "node_modules/@tanstack/start-client-core/skills/start-core/server-functions/SKILL.md"
-- task: "Adding auth or protecting routes (beforeLoad, redirects, RBAC)"
-  load: "node_modules/@tanstack/router-core/skills/router-core/auth-and-guards/SKILL.md"
-- task: "Working with URL search params or filters"
-  load: "node_modules/@tanstack/router-core/skills/router-core/search-params/SKILL.md"
-- task: "Building UI components, especially navigation components using createLink or ButtonLink"
-  load: "node_modules/@tanstack/router-core/skills/router-core/navigation/SKILL.md"
-- task: "Building UI components with React and TanStack Start (React-specific imports, hooks)"
-  load: "node_modules/@tanstack/react-start/skills/react-start/SKILL.md"
-- task: "Lazy routes, code splitting, .lazy.tsx files, autoCodeSplitting"
-  load: "node_modules/@tanstack/router-core/skills/router-core/code-splitting/SKILL.md"
-- task: "404 pages, not found handling, error boundaries"
-  load: "node_modules/@tanstack/router-core/skills/router-core/not-found-and-errors/SKILL.md"
-- task: "Dynamic route segments ($param), splat routes, path params"
-  load: "node_modules/@tanstack/router-core/skills/router-core/path-params/SKILL.md"
-- task: "API endpoints, server route handlers (GET/POST on file routes)"
-  load: "node_modules/@tanstack/start-client-core/skills/start-core/server-routes/SKILL.md"
-- task: "Isomorphic code boundaries, server-only/client-only functions, environment variables"
-  load: "node_modules/@tanstack/start-client-core/skills/start-core/execution-model/SKILL.md"
-- task: "Server middleware, createMiddleware, global middleware"
-  load: "node_modules/@tanstack/start-client-core/skills/start-core/middleware/SKILL.md"
-- task: "SSR, streaming, server/client entry points, head management, dehydration"
-load: "node_modules/@tanstack/router-core/skills/router-core/ssr/SKILL.md"
+- Skill check: run `bunx @tanstack/intent@latest list`, or use skills already listed in context.
+- Skill guidance: if one local skill clearly matches the task, run `bunx @tanstack/intent@latest load <package>#<skill>` and follow the returned `SKILL.md`.
+- Monorepos: when working across packages, run the skill check from the workspace root and prefer the local skill for the package being changed.
+- Multiple matches: prefer the most specific local skill for the package or concern you are changing; load additional skills only when the task spans multiple packages or concerns.
 <!-- intent-skills:end -->
