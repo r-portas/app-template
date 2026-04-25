@@ -36,6 +36,23 @@ git remote add origin <your-repo-url>
 bun dev
 ```
 
+## Keeping Up with Template Updates
+
+After creating an app from this template, you can pull in future improvements by adding this repo as an upstream remote:
+
+```bash
+git remote add template https://github.com/r-portas/app-template.git
+```
+
+When you want to pull in updates:
+
+```bash
+git fetch template
+git merge template/main --allow-unrelated-histories
+```
+
+Resolve any conflicts (your app-specific files like `src/routes/` and `src/components/app-sidebar.tsx` will likely need manual review), then commit the result.
+
 ## Development
 
 ```bash
