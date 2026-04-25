@@ -4,18 +4,13 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-// ---------------------------------------------------------------------------
-// Display
-// ---------------------------------------------------------------------------
-
+// #region Display
 function Display({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return <Heading level={1} className={cn("text-8xl tracking-tighter", className)} {...props} />;
 }
+// #endregion
 
-// ---------------------------------------------------------------------------
-// Heading
-// ---------------------------------------------------------------------------
-
+// #region Heading
 const headingVariants = cva("font-serif font-light tracking-tight", {
   variants: {
     level: {
@@ -59,19 +54,15 @@ function Heading({
     />
   );
 }
+// #endregion
 
-// ---------------------------------------------------------------------------
-// Lead
-// ---------------------------------------------------------------------------
-
+// #region Lead
 function Lead({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
   return <p className={cn("text-xl leading-8 text-muted-foreground", className)} {...props} />;
 }
+// #endregion
 
-// ---------------------------------------------------------------------------
-// Typography
-// ---------------------------------------------------------------------------
-
+// #region Typography
 const typographyVariants = cva("", {
   variants: {
     variant: {
@@ -104,6 +95,6 @@ function Typography({
     />
   );
 }
+// #endregion
 
-// Exports
 export { Heading, headingVariants, Display, Typography, typographyVariants, Lead };

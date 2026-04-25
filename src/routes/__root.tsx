@@ -1,7 +1,7 @@
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-import { AppSidebar } from "@/components/app-sidebar";
+import AppSidebar from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_NAME } from "@/constants";
@@ -27,6 +27,7 @@ export const Route = createRootRoute({
   component: RootComponent,
 });
 
+// #region RootComponent
 function RootComponent() {
   return (
     <RootDocument>
@@ -34,7 +35,9 @@ function RootComponent() {
     </RootDocument>
   );
 }
+// #endregion
 
+// #region Providers
 function Providers({ children }: { children: ReactNode }) {
   return (
     <TooltipProvider>
@@ -42,7 +45,9 @@ function Providers({ children }: { children: ReactNode }) {
     </TooltipProvider>
   );
 }
+// #endregion
 
+// #region RootDocument
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html>
@@ -59,3 +64,4 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
     </html>
   );
 }
+// #endregion

@@ -2,7 +2,7 @@ import { Heading, Typography } from "@/components/ui/typography";
 
 import ButtonLink from "./ui/button-link";
 
-export function NotFound() {
+export default function NotFound() {
   return (
     <div className="flex h-full min-h-[calc(100vh-3rem)] flex-col items-center justify-center gap-6 text-center">
       <Typography

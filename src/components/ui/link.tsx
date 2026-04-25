@@ -1,7 +1,9 @@
 import { createLink } from "@tanstack/react-router";
 
-const LinkComponent = ({ ref, ...props }: React.ComponentPropsWithRef<"a">) => (
-  <a ref={ref} {...props} className="hover:text-primary underline underline-offset-4" />
+import { cn } from "@/lib/utils";
+
+const LinkComponent = ({ ref, className, ...props }: React.ComponentPropsWithRef<"a">) => (
+  <a ref={ref} className={cn("hover:text-primary underline underline-offset-4", className)} {...props} />
 );
 
 const Link = createLink(LinkComponent);

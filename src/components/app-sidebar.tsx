@@ -25,7 +25,7 @@ const navItems = linkOptions([
   { to: "/kitchen-sink", label: "Kitchen Sink", icon: FlaskConicalIcon },
 ]) as NavItem[];
 
-export function AppSidebar() {
+export default function AppSidebar() {
   return (
     <Sidebar collapsible="none" className="h-svh sticky top-0">
       <SidebarHeader className="border-b px-4 py-3">

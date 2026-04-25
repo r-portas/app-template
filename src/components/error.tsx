@@ -7,10 +7,9 @@ import ButtonLink from "./ui/button-link";
 
 interface ErrorComponentProps {
   error: Error;
-  reset: () => void;
 }
 
-export function ErrorComponent({ error }: ErrorComponentProps) {
+export default function ErrorComponent({ error }: ErrorComponentProps) {
   const router = useRouter();
 
   return (
