@@ -6,10 +6,10 @@
     "dev": "bun --bun vite dev",
     "build": "bun --bun vite build",
     "preview": "bun --bun vite preview",
-    "shadcn": "shadcn",
+    "typecheck": "tsc",
     "lint": "oxlint",
     "format": "oxfmt",
-    "typecheck": "tsc"
+    "shadcn": "shadcn"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.2.8",

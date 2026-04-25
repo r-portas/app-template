@@ -7,9 +7,7 @@
       "Bash(find *)",
       "Bash(file *)",
       "Bash(strings *)",
-      "Bash(cat *)",
-      "mcp__shadcn__*"
+      "Bash(cat *)"
     ]
-  },
-  "enableAllProjectMcpServers": true
+  }
 }

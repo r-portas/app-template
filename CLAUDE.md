@@ -47,12 +47,6 @@ Always use the components from `src/components/ui/typography.tsx` (`Display`, `H
 
 If a use case doesn't fit the existing typography components — for example, a label or eyebrow style that conflicts with `Heading`'s serif/large defaults — **do not work around it silently**. Instead, explain the mismatch and ask how to handle it before writing any code.
 
-## MCP Servers
-
-The following MCP servers are available:
-
-- **shadcn**: Use `mcp__shadcn__*` tools to search, view, and add shadcn/ui components. Key tools: `search_items_in_registries`, `view_items_in_registries`, `get_item_examples_from_registries`, `get_add_command_for_items`.
-
 <!-- intent-skills:start -->
 
 ## Skill Loading
