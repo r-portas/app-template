@@ -8,6 +8,27 @@ After cloning this template, update the following before building:
 2. **Sidebar links** — update `src/components/app-sidebar.tsx` to reflect your app's routes. Remove the Kitchen Sink link once you no longer need it.
 3. **Delete the kitchen sink** — `src/routes/kitchen-sink.tsx` is a component showcase for reference. Delete it when you're ready.
 
+## Style guides
+
+Always consult these skills before writing any code:
+
+- `typescript-style-guide` — TypeScript conventions
+- `react-style-guide` — React/JSX conventions
+- `preferred-npm-packages` — package choices
+- `tanstack-start-project-structure` — where files go
+
+<!-- intent-skills:start -->
+
+## Skill Loading
+
+Before substantial work:
+
+- Skill check: run `bunx @tanstack/intent@latest list`, or use skills already listed in context.
+- Skill guidance: if one local skill clearly matches the task, run `bunx @tanstack/intent@latest load <package>#<skill>` and follow the returned `SKILL.md`.
+- Monorepos: when working across packages, run the skill check from the workspace root and prefer the local skill for the package being changed.
+- Multiple matches: prefer the most specific local skill for the package or concern you are changing; load additional skills only when the task spans multiple packages or concerns.
+<!-- intent-skills:end -->
+
 ## Commands
 
 ```bash
@@ -46,15 +67,3 @@ This is a full-stack React app built on **TanStack Start** with **Bun** as the r
 Always use the components from `src/components/ui/typography.tsx` (`Display`, `Heading`, `Lead`, `Typography`) rather than raw HTML elements with inline Tailwind classes. Never write a raw `<h1>`–`<h6>` or `<p>` with custom class overrides when a typography component exists.
 
 If a use case doesn't fit the existing typography components — for example, a label or eyebrow style that conflicts with `Heading`'s serif/large defaults — **do not work around it silently**. Instead, explain the mismatch and ask how to handle it before writing any code.
-
-<!-- intent-skills:start -->
-
-## Skill Loading
-
-Before substantial work:
-
-- Skill check: run `bunx @tanstack/intent@latest list`, or use skills already listed in context.
-- Skill guidance: if one local skill clearly matches the task, run `bunx @tanstack/intent@latest load <package>#<skill>` and follow the returned `SKILL.md`.
-- Monorepos: when working across packages, run the skill check from the workspace root and prefer the local skill for the package being changed.
-- Multiple matches: prefer the most specific local skill for the package or concern you are changing; load additional skills only when the task spans multiple packages or concerns.
-<!-- intent-skills:end -->
