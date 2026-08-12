@@ -1,6 +1,6 @@
 # app-template
 
-An opinionated app template built using TanStack Start, Bun, TailwindCSS and shadcn/ui
+An opinionated app template built using TanStack Start, Bun, TailwindCSS, and shadcn/ui
 
 ## Template Setup
 
@@ -41,6 +41,10 @@ git push -u origin main
 
 Delete this section from the README.md file
 
+## Documentation
+
+- [VISION.md](./VISION.md) — the purpose and goals of this app
+
 ## Getting Started
 
 ```bash
@@ -60,18 +64,14 @@ bun dev
 bun run update
 ```
 
-### Install Agent Browser
+## Environment variables
 
-```bash
-# Install the library globally
-bun install -g agent-browser
+Environment variables can be configured in one of two files:
 
-# Download Chrome
-agent-browser install
+- `.env` for non-secret configuration, this is committed in git
+- `.env.local` for secret configuration, this is gitignored. Copy `.env.local.example` to get started.
 
-# Install the skill
-bunx --bun skills add vercel-labs/agent-browser --global
-```
+## Common Tasks
 
 ### Update skills
 
@@ -79,7 +79,7 @@ bunx --bun skills add vercel-labs/agent-browser --global
 bunx --bun skills update --global
 ```
 
-## Pull changes from the template
+### Pull changes from the template
 
 Sync improvements made to the template repository into your app after the initial clone.
 
@@ -93,10 +93,3 @@ git log --oneline HEAD..template/main
 # Merge the changes into your local repository
 git merge template/main
 ```
-
-## Environment variables
-
-Environment variables can be configured in one of two files:
-
-- `.env` for non-secret configuration, this is committed in git
-- `.env.local` for secret configuration, this is gitignored. Copy `.env.local.example` to get started.

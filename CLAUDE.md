@@ -14,6 +14,10 @@ Before editing files for a substantial task:
 
 <!-- intent-skills:end -->
 
+## Documentation
+
+- [VISION.md](./VISION.md) — what this app does, who it's for, goals and non-goals
+
 ## Project Structure
 
 - `src/lib` contains the project's library code, grouped by domain via this naming convention (e.g. for a `todos` domain):
@@ -29,6 +33,7 @@ Before editing files for a substantial task:
 
 - Apply the YAGNI and KISS principles
 - Keep things simple, robust and readable
+- Keep comments up to date with code changes
 - Exports benefit from a short tsdoc comment describing intent and any non-obvious behaviour. Not required for every export — use judgment based on complexity. When you do add one, use the following format:
   ```ts
   /**

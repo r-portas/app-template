@@ -13,7 +13,7 @@ const APP_ICON = Blocks;
  * The items shown in the sidebar, each with an icon and a title.
  */
 const SIDEBAR_ITEMS: SidebarItem[] = [
-  { icon: Home, title: "Home", to: "/", activeOptions: { exact: true } }
+  { icon: Home, title: "Home", to: "/", activeOptions: { exact: true } },
 ];
 
 /**
