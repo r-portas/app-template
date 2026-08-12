@@ -1,6 +1,49 @@
 # app-template
 
-<TODO>
+An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and shadcn/ui
+
+## Template Setup
+
+> This section can be deleted after the initial setup
+
+### 1. Clone the template
+
+```bash
+# Clone the template repository
+git clone git@github.com:r-portas/app-template.git my-app
+cd my-app
+
+# Rename the remote to template so you can pull changes from the template in the future
+git remote rename origin template
+```
+
+### 2. Set up the app
+
+1. Update the `package.json` file with your app name
+2. Update the `README.md` file with your app name and description
+3. Update `VITE_APP_NAME` in the `.env` file with your app name
+4. Set `APP_ICON` in `src/components/app-layout.tsx` to the icon you want to use for your app
+
+### 3. Push changes
+
+```bash
+# Create a new repository on GitHub
+gh repo create github-username/my-app --private --source=. --remote=origin
+
+# Commit changes
+git add . && git commit -m "Init app"
+
+# Push
+git push -u origin main
+```
+
+### 4. Cleanup
+
+Delete this section from the README.md file
+
+## Documentation
+
+- [VISION.md](./VISION.md) — the purpose and goals of this app
 
 ## Getting Started
 
@@ -21,18 +64,14 @@ bun dev
 bun run update
 ```
 
-### Install Agent Browser
+## Environment variables
 
-```bash
-# Install the library globally
-bun install -g agent-browser
+Environment variables can be configured in one of two files:
 
-# Download Chrome
-agent-browser install
+- `.env` for non-secret configuration, this is committed in git
+- `.env.local` for secret configuration, this is gitignored. Copy `.env.local.example` to get started.
 
-# Install the skill
-bunx --bun skills add vercel-labs/agent-browser --global
-```
+## Common Tasks
 
 ### Update skills
 
@@ -40,9 +79,17 @@ bunx --bun skills add vercel-labs/agent-browser --global
 bunx --bun skills update --global
 ```
 
-## Environment variables
+### Pull changes from the template
 
-Environment variables can be configured in one of two files:
+Sync improvements made to the template repository into your app after the initial clone.
 
-- `.env` for non-secret configuration, this is committed in git
-- `.env.local` for secret configuration, this is gitignored. Copy `.env.local.example` to get started.
+```bash
+# Fetch the latest changes from the template repository
+git fetch template
+
+# Check what changes will be merged
+git log --oneline HEAD..template/main
+
+# Merge the changes into your local repository
+git merge template/main
+```

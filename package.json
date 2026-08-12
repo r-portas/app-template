@@ -5,6 +5,7 @@
     "dev": "bun --bun vite dev",
     "build": "bun --bun vite build && tsc --noEmit && oxlint .",
     "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
     "update": "bun update --interactive --latest"
   },
   "dependencies": {

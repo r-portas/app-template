@@ -14,6 +14,16 @@ Before editing files for a substantial task:
 
 <!-- intent-skills:end -->
 
+## Documentation
+
+- [VISION.md](./VISION.md) — what this app does, who it's for, goals and non-goals
+
+## Planning
+
+- Before planning, check documentation using TanStack Intent
+- Always prefer simpler, robust solutions
+  - If you see a way to solve a problem simpler or most robustly, flag it with the user
+
 ## Project Structure
 
 - `src/lib` contains the project's library code, grouped by domain via this naming convention (e.g. for a `todos` domain):
@@ -25,8 +35,11 @@ Before editing files for a substantial task:
   - `src/lib/env.ts` — client-readable variables, which must be prefixed with `VITE_`. Values come from `.env` (committed) and `.env.local` (gitignored, for secrets).
   - `src/lib/env.server.ts` — server-only variables.
 
-## Code Style
+## Coding Preferences
 
+- Apply the YAGNI and KISS principles
+- Keep things simple, robust and readable
+- Keep comments up to date with code changes
 - Exports benefit from a short tsdoc comment describing intent and any non-obvious behaviour. Not required for every export — use judgment based on complexity. When you do add one, use the following format:
   ```ts
   /**
@@ -54,12 +67,6 @@ Before editing files for a substantial task:
 - Always use Bun's test runner (`bun test`), see [the documentation](https://bun.com/docs/test.md) for more information.
 - Before writing tests, extract pure functions and presentational components out of framework wrappers (e.g. `createServerFn`, route files) so tests don't need runtime context.
 
-## Planning
-
-- Before planning, check documentation using TanStack Intent
-- Always prefer simpler, robust solutions
-  - If you see a way to solve a problem simpler or most robustly, flag it with the user
-
 ## User Interface
 
 - This project uses [shadcn/ui](https://ui.shadcn.com) components built on Tailwind CSS (v4) and Base UI.
@@ -68,3 +75,25 @@ Before editing files for a substantial task:
 - Tailwind is configured CSS-first via `src/styles.css`
 - Tailwind class sorting is handled by Oxfmt's `sortTailwindcss` option in `.oxfmtrc.json`, so classes are reordered automatically on format.
 - **Do not use `<Button render={<a />} nativeButton={false} />` for links.** The Base UI `Button` component always applies `role="button"`, which overrides the semantic link role on `<a>` elements. Use `buttonVariants` with a plain `<a>` tag instead.
+
+## Pull requests
+
+- Titles should be simple and easy to understand
+- Use the following template for the description:
+  ```md
+  ## What
+
+  <!-- one line summary -->
+
+  ## Why
+
+  <!-- dot point list of reasons for the change -->
+
+  ## How
+
+  <!-- dot point list of how the change was implemented, used nested dot points as required -->
+
+  ## Testing
+
+  <!-- list of checkboxes for testing -->
+  ```
