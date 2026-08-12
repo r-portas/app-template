@@ -25,3 +25,4 @@ This template captures those decisions so that you can clone it and start buildi
 ## Roadmap
 
 1. Add built-in agent skills for configuring common things, like databases, deployment, etc.
+2. Custom theme?
