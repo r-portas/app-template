@@ -5,7 +5,8 @@
   "explorer.fileNesting.patterns": {
     "README.md": "*.md",
     "package.json": "bun.lock, tsconfig.json, vite.config.ts, *.json",
-    ".env": ".env.*"
+    ".env": ".env.*",
+    "router.tsx": "routeTree.gen.ts"
   },
   "files.associations": {
     "*.css": "tailwindcss"
