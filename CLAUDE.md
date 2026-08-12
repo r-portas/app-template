@@ -18,6 +18,12 @@ Before editing files for a substantial task:
 
 - [VISION.md](./VISION.md) — what this app does, who it's for, goals and non-goals
 
+## Planning
+
+- Before planning, check documentation using TanStack Intent
+- Always prefer simpler, robust solutions
+  - If you see a way to solve a problem simpler or most robustly, flag it with the user
+
 ## Project Structure
 
 - `src/lib` contains the project's library code, grouped by domain via this naming convention (e.g. for a `todos` domain):
@@ -61,12 +67,6 @@ Before editing files for a substantial task:
 - Always use Bun's test runner (`bun test`), see [the documentation](https://bun.com/docs/test.md) for more information.
 - Before writing tests, extract pure functions and presentational components out of framework wrappers (e.g. `createServerFn`, route files) so tests don't need runtime context.
 
-## Planning
-
-- Before planning, check documentation using TanStack Intent
-- Always prefer simpler, robust solutions
-  - If you see a way to solve a problem simpler or most robustly, flag it with the user
-
 ## User Interface
 
 - This project uses [shadcn/ui](https://ui.shadcn.com) components built on Tailwind CSS (v4) and Base UI.
@@ -75,3 +75,8 @@ Before editing files for a substantial task:
 - Tailwind is configured CSS-first via `src/styles.css`
 - Tailwind class sorting is handled by Oxfmt's `sortTailwindcss` option in `.oxfmtrc.json`, so classes are reordered automatically on format.
 - **Do not use `<Button render={<a />} nativeButton={false} />` for links.** The Base UI `Button` component always applies `role="button"`, which overrides the semantic link role on `<a>` elements. Use `buttonVariants` with a plain `<a>` tag instead.
+
+## Pull requests
+
+- Titles should be simple and easy to understand
+- Descriptions should open with a minimal, clear description of the problem, then follow with how the problem was solved.

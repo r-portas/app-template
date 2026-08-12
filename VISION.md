@@ -2,17 +2,18 @@
 
 ## What this is
 
-An opinionated starting point for new full-stack apps, pre-wired with the stack, conventions, and tooling so a new project starts from a working app instead of a blank folder.
+An opinionated starting point for full-stack applications, pre-configured with common tooling and best practices allowing you to hit the ground running with new projects.
 
 ## Why it exists
 
-Every new project pays the same setup tax: Setting up build tools, CI pipelines, frameworks and tools. That tax is worth paying once, not every time. This template captures those decisions so cloning it and running `bun dev` gets straight to building the actual app.
+Setting up a new project can involve setting up build tools, frameworks, libraries and other tooling.
+This template captures those decisions so that you can clone it and start building your app immediately.
 
 ## Goals
 
 - Clone-to-running in minutes, with a documented setup checklist ([README.md](README.md))
-- A clear, consistent project structure (`src/lib` domain modules split into server/functions/schemas/isomorphic) that scales as an app grows
-- Stay pullable: downstream apps can `git fetch template && git merge template/main` to absorb template improvements without rewriting their own code
+- Easily keep your app up to date with template improvements
+- A opinionated project structure (`src/lib` domain modules split into server/functions/schemas/isomorphic) that scales as an app grows
 - Encode agent-facing conventions (CLAUDE.md, skills) so AI-assisted work on downstream apps starts from the same good defaults
 - Have a CI pipeline that works out of the box
 

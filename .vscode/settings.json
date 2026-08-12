@@ -1,16 +1,26 @@
 {
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "README.md": "VISION.md,",
+    "package.json": "bun.lock, tsconfig.json, vite.config.ts, components.json, .oxlintrc.json, .oxfmtrc.json",
+    ".env": ".env.*"
+  },
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "files.watcherExclude": {
     "**/routeTree.gen.ts": true,
-    "bun.lock": true
+    "bun.lock": true,
+    "dist": true,
+    ".tanstack": true
   },
   "search.exclude": {
     "**/routeTree.gen.ts": true,
-    "bun.lock": true
+    "bun.lock": true,
+    "dist": true,
+    ".tanstack": true
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true,
