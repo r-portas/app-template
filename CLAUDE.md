@@ -97,3 +97,10 @@ Before editing files for a substantial task:
 
   <!-- list of checkboxes for testing -->
   ```
+- Use the following branch naming convention: `<type>/<short-description>`, where `<type>` is one of:
+  - `feature` — for new features
+  - `fix` — for bug fixes
+  - `refactor` — for refactoring existing code
+  - `docs` — for documentation changes
+  - `test` — for test changes
+  - `chore` — for other changes that don't modify src or tests (e.g. build, tooling, dependencies)
