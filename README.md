@@ -1,6 +1,6 @@
 # app-template
 
-An opinionated app template built using TanStack Start, Bun, TailwindCSS, and shadcn/ui
+An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and shadcn/ui
 
 ## Template Setup
 
@@ -17,7 +17,7 @@ cd my-app
 git remote rename origin template
 ```
 
-### 2. Setup the app
+### 2. Set up the app
 
 1. Update the `package.json` file with your app name
 2. Update the `README.md` file with your app name and description
@@ -28,7 +28,7 @@ git remote rename origin template
 
 ```bash
 # Create a new repository on GitHub
-gh repo create <github-username>/<my-app> --private --source=. --remote=origin
+gh repo create github-username/my-app --private --source=. --remote=origin
 
 # Commit changes
 git add . && git commit -m "Init app"

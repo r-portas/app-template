@@ -79,4 +79,21 @@ Before editing files for a substantial task:
 ## Pull requests
 
 - Titles should be simple and easy to understand
-- Descriptions should open with a minimal, clear description of the problem, then follow with how the problem was solved.
+- Use the following template for the description:
+  ```md
+  ## What
+
+  <!-- one line summary -->
+
+  ## Why
+
+  <!-- dot point list of reasons for the change -->
+
+  ## How
+
+  <!-- dot point list of how the change was implemented, used nested dot points as required -->
+
+  ## Testing
+
+  <!-- list of checkboxes for testing -->
+  ```
