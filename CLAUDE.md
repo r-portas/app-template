@@ -25,8 +25,10 @@ Before editing files for a substantial task:
   - `src/lib/env.ts` — client-readable variables, which must be prefixed with `VITE_`. Values come from `.env` (committed) and `.env.local` (gitignored, for secrets).
   - `src/lib/env.server.ts` — server-only variables.
 
-## Code Style
+## Coding Preferences
 
+- Apply the YAGNI and KISS principles
+- Keep things simple, robust and readable
 - Exports benefit from a short tsdoc comment describing intent and any non-obvious behaviour. Not required for every export — use judgment based on complexity. When you do add one, use the following format:
   ```ts
   /**
