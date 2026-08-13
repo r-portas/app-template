@@ -78,20 +78,17 @@ const serverEnvSchema = z.object({
 export default serverEnvSchema.parse(process.env);
 ```
 
-The database path is non-secret configuration, so it belongs in `.env` (committed) rather than
-`.env.local`:
-
 ```bash
 DATABASE_URL=file:./local.db
 ```
 
-Add the database file to `.gitignore`. Bun's SQLite driver defaults to WAL mode, which creates
-`-shm`/`-wal` sidecar files alongside it — ignore those too:
+- Belongs in `.env` (committed) rather than `.env.local` — the database path is non-secret
+  configuration
+
+Add the database file to `.gitignore`:
 
 ```
 local.db
-local.db-shm
-local.db-wal
 ```
 
 ## 4. Create the config
@@ -138,8 +135,8 @@ export const notesTable = sqliteTable("notes", {
 });
 ```
 
-`int({ mode: "timestamp_ms" })` stores timestamps as milliseconds since epoch and maps them to JS
-`Date` objects — assign `new Date()` or `Date.now()` directly.
+- `int({ mode: "timestamp_ms" })` — stores timestamps as milliseconds since epoch and maps them to
+  JS `Date` objects; assign `new Date()` or `Date.now()` directly
 
 ### 5.1 Relations
 
@@ -174,9 +171,8 @@ export const relations = defineRelations(schema, (r) => ({
     actually runs
   - The relational API changed shape once during the beta/rc cycle and may change again
 
-For a many-to-many relation through a join table, chain `.through()` on both sides' columns instead
-of writing relations on the join table itself — `db.query` then traverses the join table implicitly.
-Illustrative only; `tagsTable`/`noteTagsTable` aren't part of the example schema above:
+For a many-to-many relation through a join table, illustrative only; `tagsTable`/`noteTagsTable`
+aren't part of the example schema above:
 
 ```ts
 tagsTable: {
@@ -186,6 +182,9 @@ tagsTable: {
   }),
 },
 ```
+
+- `.through()` — chained on both sides' columns instead of writing relations on the join table
+  itself; `db.query` then traverses the join table implicitly
 
 ## 6. Create the client
 
@@ -258,8 +257,7 @@ bun run format
 bun run build
 ```
 
-`drizzle:push` is the development fast path: no migration files, just push and query. For
-production, use `drizzle-kit generate` to produce tracked SQL migration files, then
-`drizzle-kit migrate` to apply them.
-
-Browse the database in Drizzle Studio with `bun drizzle:studio`.
+- `drizzle:push` — the development fast path, pushing the schema directly with no migration files
+  - For production, use `drizzle-kit generate` then `drizzle-kit migrate` instead (see the
+    `CLAUDE.md` section written in the step above)
+- `bun drizzle:studio` — browse the database in Drizzle Studio
