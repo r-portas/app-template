@@ -77,17 +77,22 @@ There are a few additional tools that can be configured via agent skills.
 Environment variables can be configured in one of two files:
 
 - `.env` for non-secret configuration, this is committed in git
-- `.env.local` for secret configuration, this is gitignored. Copy `.env.local.example` to get started.
+- `.env.local` for secret configuration, this is gitignored. Copy `.env.local.example` to get
+  started.
 
 ## Common Tasks
 
 ### Add a new setup skill
 
-Set the tool up by hand first, then run [`/draft-setup-skill`](./.claude/skills/draft-setup-skill/SKILL.md) to capture it as a reusable `/setup-*` skill from the changes on disk.
+Set the tool up by hand first, then run
+[`/draft-setup-skill`](./.claude/skills/draft-setup-skill/SKILL.md) to capture it as a reusable
+`/setup-*` skill from the changes on disk.
 
 ### Review setup skills
 
-Run [`/review-setup-skills`](./.claude/skills/review-setup-skills/SKILL.md) to check one or all `/setup-*` skills against the template and against the upstream libraries' current docs, and fix what's drifted. Pass a skill name to review just that one.
+Run [`/review-setup-skills`](./.claude/skills/review-setup-skills/SKILL.md) to check one or all
+`/setup-*` skills against the template and against the upstream libraries' current docs, and fix
+what's drifted. Pass a skill name to review just that one.
 
 ### Update skills
 

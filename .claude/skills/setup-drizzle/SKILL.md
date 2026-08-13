@@ -32,8 +32,8 @@ Read these before going beyond what the steps below cover.
 ## 0. Check it isn't already set up
 
 If `drizzle.config.ts` exists at the project root, Drizzle is already configured. Stop here, tell
-the user what's already in place, and ask what they actually want changed — do not re-run the
-steps below, they will overwrite an existing schema.
+the user what's already in place, and ask what they actually want changed — do not re-run the steps
+below, they will overwrite an existing schema.
 
 ## 1. Install dependencies
 
@@ -174,8 +174,8 @@ export const relations = defineRelations(schema, (r) => ({
   - The relational API changed shape once during the beta/rc cycle and may change again
 
 For a many-to-many relation through a join table, chain `.through()` on both sides' columns instead
-of writing relations on the join table itself — `db.query` then traverses the join table
-implicitly. Illustrative only; `tagsTable`/`noteTagsTable` aren't part of the example schema above:
+of writing relations on the join table itself — `db.query` then traverses the join table implicitly.
+Illustrative only; `tagsTable`/`noteTagsTable` aren't part of the example schema above:
 
 ```ts
 tagsTable: {
@@ -233,16 +233,17 @@ export const listNotesFn = createServerFn().handler(() => listNotes());
 
 ## 8. Document the convention
 
-Add a `Database` section to the project's `CLAUDE.md`, so future changes (and the agent making
-them) stay aligned with the relational API this version of Drizzle actually has:
+Add a `Database` section to the project's `CLAUDE.md`, so future changes (and the agent making them)
+stay aligned with the relational API this version of Drizzle actually has:
 
 ```md
 ## Database
 
-- This project uses Drizzle ORM with Bun's native SQLite driver, see [the documentation](https://orm.drizzle.team/llms.txt)
-- Schema and relations live in `src/lib/db.schema.ts`. Relations use `defineRelations()` — check
-  the docs above before assuming the older `relations()` helper still applies; this package is
-  pre-1.0 and its relational API has already changed shape once.
+- This project uses Drizzle ORM with Bun's native SQLite driver, see
+  [the documentation](https://orm.drizzle.team/llms.txt)
+- Schema and relations live in `src/lib/db.schema.ts`. Relations use `defineRelations()` — check the
+  docs above before assuming the older `relations()` helper still applies; this package is pre-1.0
+  and its relational API has already changed shape once.
 - `bun drizzle:push` applies schema changes directly in development — no migration files. For
   production, use `drizzle-kit generate` then `drizzle-kit migrate` instead.
 - Browse the database with `bun drizzle:studio`.

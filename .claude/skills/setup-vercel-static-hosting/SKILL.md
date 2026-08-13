@@ -28,8 +28,8 @@ Read these before going beyond what the steps below cover.
 
 ## 0. Check it isn't already set up
 
-If `vercel.json` exists at the project root, Vercel hosting is already configured.
-Stop here, tell the user what's already in place, and ask what they want changed.
+If `vercel.json` exists at the project root, Vercel hosting is already configured. Stop here, tell
+the user what's already in place, and ask what they want changed.
 
 ## 1. Create the `vercel.json` file
 
@@ -56,11 +56,13 @@ Stop here, tell the user what's already in place, and ask what they want changed
 
 - `framework: null` stops Vercel's framework detection from overriding the explicit commands above.
 - The long-lived `Cache-Control` on `/assets/` is safe because Vite adds a hash to those filenames.
-- Confirm `outputDirectory` matches where the build actually writes — check `dist/` after a build if unsure.
+- Confirm `outputDirectory` matches where the build actually writes — check `dist/` after a build if
+  unsure.
 
 ## 2. Configure prerendering in `vite.config.ts`
 
-Set the `prerender` option on the `tanstackStart` plugin. The plugin is currently called with no arguments, so add the options object:
+Set the `prerender` option on the `tanstackStart` plugin. The plugin is currently called with no
+arguments, so add the options object:
 
 ```ts
 export default defineConfig({
@@ -93,5 +95,5 @@ export default defineConfig({
 bun run build
 ```
 
-Confirm the build wrote prerendered HTML into `dist/client`,
-not just the JS bundle — if only `index.html` is there, prerendering didn't pick up the other routes.
+Confirm the build wrote prerendered HTML into `dist/client`, not just the JS bundle — if only
+`index.html` is there, prerendering didn't pick up the other routes.

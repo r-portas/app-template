@@ -1,6 +1,10 @@
 ---
 name: review-setup-skills
-description: Reviews and updates existing `/setup-*` skills — checks structure against setup-skill-template.md and diffs each skill's steps against the upstream libraries' current documentation and changelog. Use when a `/setup-*` skill needs checking or refreshing for drift. Takes an optional skill name; omitted means review every `setup-*` skill.
+description:
+  Reviews and updates existing `/setup-*` skills — checks structure against setup-skill-template.md
+  and diffs each skill's steps against the upstream libraries' current documentation and changelog.
+  Use when a `/setup-*` skill needs checking or refreshing for drift. Takes an optional skill name;
+  omitted means review every `setup-*` skill.
 ---
 
 # Review Setup Skills
@@ -29,9 +33,8 @@ Parse the optional skill-name argument.
 
 ## 2. Read the template
 
-Read `.claude/setup-skill-template.md` in full and hold its rules — they're what step 3's
-structural pass checks against. Reread it here rather than relying on a stale summary from a
-previous run.
+Read `.claude/setup-skill-template.md` in full and hold its rules — they're what step 3's structural
+pass checks against. Reread it here rather than relying on a stale summary from a previous run.
 
 **Done when** you can name every rule in the template from memory.
 
@@ -42,8 +45,8 @@ and upstream findings belong in one report, not two.
 
 ### 3.1 Structural pass
 
-Check the skill against every rule in the template. For each violation, note the rule number,
-what's wrong, and where.
+Check the skill against every rule in the template. For each violation, note the rule number, what's
+wrong, and where.
 
 A few are easy to miss on a skim, so check them deliberately:
 
@@ -87,8 +90,8 @@ spot-checked.
 
 ## 4. Decide what to fix directly vs. what to ask about
 
-Structural violations and confirmed version bumps that don't change the API are safe to fix
-directly — they don't change what the skill recommends, only bring the file in line with itself.
+Structural violations and confirmed version bumps that don't change the API are safe to fix directly
+— they don't change what the skill recommends, only bring the file in line with itself.
 
 Anything that changes the _recommendation_ — a new pin, a config shape that moved, a best-practice
 change, a dead changelog link — needs a judgment call the user should make, since it changes what
@@ -99,9 +102,8 @@ if there's only one skill and one finding) before editing.
 
 ## 5. Apply the fixes
 
-Edit each `SKILL.md` in place. Keep the template's step ordering (guard → install → configure →
-code → document → verify) — a fix that reorders steps needs the same justification a new skill
-would.
+Edit each `SKILL.md` in place. Keep the template's step ordering (guard → install → configure → code
+→ document → verify) — a fix that reorders steps needs the same justification a new skill would.
 
 Update the `Documentation` section's links if any moved, and update a pin's justification bullet if
 the reason behind it changed.

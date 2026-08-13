@@ -40,8 +40,8 @@ Read these before going beyond what the steps below cover.
 
 ## 0. Check it isn't already set up
 
-If `<sentinel file>` exists, <thing> is already configured. Stop here, tell the user what's
-already in place, and ask what they want changed.
+If `<sentinel file>` exists, <thing> is already configured. Stop here, tell the user what's already
+in place, and ask what they want changed.
 
 ## 1. Install dependencies
 
@@ -73,15 +73,12 @@ example and tell the agent to ask the user what they actually need.>
 
 ## 4. Document the convention
 
-<The block to append to `CLAUDE.md`, covering what a future agent needs to work with this
-without breaking it.>
+<The block to append to `CLAUDE.md`, covering what a future agent needs to work with this without
+breaking it.>
 
 ## 5. Verify
 
-\`\`\`bash
-bun run format
-bun run build
-\`\`\`
+\`\`\`bash bun run format bun run build \`\`\`
 
 <What "working" looks like beyond a green build.>
 
@@ -98,8 +95,8 @@ A skill matching this template satisfies all of these:
 
 1. **`name` matches the directory name**, and the directory is `setup-<thing>`.
 2. **`description` states the situation that should trigger the skill**, phrased so it fires when a
-   user describes the problem rather than naming the tool. It is the only part loaded every
-   session, so it does the invocation work alone.
+   user describes the problem rather than naming the tool. It is the only part loaded every session,
+   so it does the invocation work alone.
 3. **Step 0's sentinel-file guard exists because re-running a setup over a live project overwrites
    work.**
 4. **An `## Important Caveats` section appears above `## Documentation`** whenever the setup has a
@@ -127,15 +124,15 @@ A skill matching this template satisfies all of these:
    `setup-drizzle`'s `@rc5` is the shape: a pre-1.0 package whose API only matches that tag.
 8. **A "Document the convention" step exists** whenever there is ongoing guidance a future agent
    needs — which is most setups, hosting config being the usual exception.
-9. **The final step runs the project's real build**, so a wrong guide fails during setup rather
-   than silently later.
+9. **The final step runs the project's real build**, so a wrong guide fails during setup rather than
+   silently later.
 10. **A Documentation section covers every library whose API this skill encodes**, each with a
     reference and a changelog. The reference is the agent's escape hatch when the user asks for
     something the steps don't cover; the changelog is what a review pass diffs against to find rot.
     - A library the skill merely installs without encoding its API needs no entry — the test is
       whether an upstream change could break these steps.
-    - A skipped changelog needs its reason recorded, so a review pass can tell a considered
-      omission from an oversight.
+    - A skipped changelog needs its reason recorded, so a review pass can tell a considered omission
+      from an oversight.
 11. **A step with more than one clearly separate concern splits into numbered `###` subheadings**,
     e.g. `### 2.1 <sub-part>`, `### 2.2 <sub-part>`. `setup-drizzle`'s step 5 is the shape: "Define
     the schema" covers the tables every setup needs, and a follow-on "Relations" subsection splits

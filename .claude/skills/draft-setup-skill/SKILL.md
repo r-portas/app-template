@@ -1,6 +1,9 @@
 ---
 name: draft-setup-skill
-description: Use after manually setting up a tool or integration, to capture it as a reusable `/setup-*` skill. Reads the change set on disk, interviews the user about what the diff cannot show, and writes the SKILL.md.
+description:
+  Use after manually setting up a tool or integration, to capture it as a reusable `/setup-*` skill.
+  Reads the change set on disk, interviews the user about what the diff cannot show, and writes the
+  SKILL.md.
 ---
 
 # Draft Setup Skill
@@ -44,8 +47,8 @@ ground the interview in specifics, so keep it rough.
 ## 4. Interview the user
 
 Ask all seven questions below with `AskUserQuestion`, using the skeleton to make each one concrete
-("I see `drizzle.config.ts` reads `process.env` directly rather than importing the env module —
-was that deliberate?"). Batch them into as few calls as the tool allows.
+("I see `drizzle.config.ts` reads `process.env` directly rather than importing the env module — was
+that deliberate?"). Batch them into as few calls as the tool allows.
 
 1. **Sentinel** — which file's existence proves this is already set up?
 2. **Dead ends** — what did you try first that didn't work, and how did it fail? Distinguish a type
@@ -61,9 +64,9 @@ was that deliberate?"). Batch them into as few calls as the tool allows.
 6. **Wrong-tool boundary** — when should someone reach for something else instead?
 7. **Documentation** — list every library whose API the skill encodes, not every package it
    installs. Find each one's reference and changelog yourself, then put the set to the user to
-   confirm. An `llms.txt` beats a docs site; a releases page beats a homepage, because a review
-   pass reads it to decide whether the skill has rotted. Where a changelog would be too broad to
-   isolate the relevant changes, propose skipping it and record the reason.
+   confirm. An `llms.txt` beats a docs site; a releases page beats a homepage, because a review pass
+   reads it to decide whether the skill has rotted. Where a changelog would be too broad to isolate
+   the relevant changes, propose skipping it and record the reason.
 
 Every answer comes from the user. When one is missing, ask again.
 
@@ -84,8 +87,8 @@ lands in a specific slot:
 | 6 Wrong-tool boundary      | the `Important Caveats` section                      |
 | 7 Documentation            | the Documentation section                            |
 
-**Done when** every interview answer appears in its slot and the draft satisfies all eleven rules
-in the template.
+**Done when** every interview answer appears in its slot and the draft satisfies all eleven rules in
+the template.
 
 ## 6. Wire it up
 

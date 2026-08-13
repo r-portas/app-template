@@ -1,6 +1,8 @@
 ---
 name: setup-markdown
-description: Render Markdown content with TanStack Markdown, TanStack Highlight (for code highlighting) shadcn's Typeset (for prose styling)
+description:
+  Render Markdown content with TanStack Markdown, TanStack Highlight (for code highlighting)
+  shadcn's Typeset (for prose styling)
 ---
 
 # Setup Markdown
@@ -97,8 +99,8 @@ rendered (see step 5):
 
 ## 3. Configure the syntax highlighter
 
-Create `src/lib/highlight.ts`. Import only the languages the project's markdown actually uses —
-each one adds to the bundle:
+Create `src/lib/highlight.ts`. Import only the languages the project's markdown actually uses — each
+one adds to the bundle:
 
 ```ts
 import { createHighlighter } from "@tanstack/highlight/core";
@@ -123,7 +125,8 @@ export const highlightMarkdownCode = createTanStackMarkdownHighlighter(highlight
 ```
 
 - `createTanStackMarkdownHighlighter` adapts the highlighter to `@tanstack/markdown`'s `highlighter`
-  render option — it emits escaped inner token markup, since Markdown owns the `<pre><code>` wrapper.
+  render option — it emits escaped inner token markup, since Markdown owns the `<pre><code>`
+  wrapper.
 - `createThemeCss` generates the CSS variables and base styles for the theme, scoped by selector.
   `darkSelector: ":root"` above always applies the dark theme; pass both `light` and `dark` themes
   with selectors that match the project's actual dark-mode toggle (e.g. `darkSelector: ".dark"`) to
