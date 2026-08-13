@@ -58,10 +58,18 @@ already in place, and ask what they want changed.
   - <specific>
   - <specific>
 
+### 2.1 <Distinct sub-part of configuration, e.g. a second config file or a separable option>
+
+<Only when this step covers more than one clearly separate concern — see rule 11.>
+
 ## 3. Write the code
 
 <The scaffolding, following the `src/lib` domain convention. Mark anything app-specific as an
 example and tell the agent to ask the user what they actually need.>
+
+### 3.1 <Distinct sub-part of the scaffolding, e.g. a follow-on concern the base code doesn't need>
+
+<Same rule as step 2 — only split out when the sub-part is separable, not for every step.>
 
 ## 4. Document the convention
 
@@ -92,20 +100,19 @@ A skill matching this template satisfies all of these:
 2. **`description` states the situation that should trigger the skill**, phrased so it fires when a
    user describes the problem rather than naming the tool. It is the only part loaded every
    session, so it does the invocation work alone.
-3. **The intro is one line** saying what the setup adds.
-4. **Step 0 guards on a specific sentinel file** whose existence proves the setup already ran, and
-   stops to ask rather than proceeding. Re-running a setup over a live project overwrites work.
-5. **An `## Important Caveats` section appears above `## Documentation`** whenever the setup has a
+3. **Step 0's sentinel-file guard exists because re-running a setup over a live project overwrites
+   work.**
+4. **An `## Important Caveats` section appears above `## Documentation`** whenever the setup has a
    sharp edge — a pin that will go stale, or a neighbouring case this skill is wrong for. It sits
    first because it decides whether to run the skill at all.
    - Optional, and left out entirely when there is no sharp edge. Unlike a missing changelog, an
      absence needs no explanation: whether a setup has a sharp edge is a judgment a review pass
      re-derives from the steps anyway.
-   - A caveat spans the whole setup. A fact about one line in one step is a rule 7 explanation
+   - A caveat spans the whole setup. A fact about one line in one step is a rule 6 explanation
      instead, and belongs in that step.
-6. **App-specific code is marked as illustrative**, paired with an instruction to ask the user what
-   they're modelling. Schemas, routes, and components are examples; scaffolding is not.
-7. **Non-obvious commands and config keys are explained in a bullet list at the end of their
+5. **App-specific code is marked as illustrative.** Schemas, routes, and components are examples;
+   scaffolding is not.
+6. **Non-obvious commands and config keys are explained in a bullet list at the end of their
    section**, below the code block rather than woven into prose around it:
    - One bullet per item, opening with the flag, key, or command in backticks so the list scans.
    - Give the _why_ — what it is there for, or what breaks without it — rather than restating what
@@ -115,19 +122,22 @@ A skill matching this template satisfies all of these:
      parent states the point, the children carry the specifics. `setup-drizzle`'s
      `defineRelations()` warning is the shape — what changed as the parent, then "not exported in
      this version" and "fails at runtime, not at the type level" as children.
-8. **Dependencies install at their latest version.** A pin is the exception, and has to justify
+7. **Dependencies install at their latest version.** A pin is the exception, and has to justify
    itself in the step's bullet list — why this version, and what to check when it goes stale.
    `setup-drizzle`'s `@rc5` is the shape: a pre-1.0 package whose API only matches that tag.
-9. **A "Document the convention" step exists** whenever there is ongoing guidance a future agent
+8. **A "Document the convention" step exists** whenever there is ongoing guidance a future agent
    needs — which is most setups, hosting config being the usual exception.
-10. **The final step runs the project's real build**, so a wrong guide fails during setup rather
-    than silently later, and ends by handing off to the user.
-11. **A Documentation section covers every library whose API this skill encodes**, each with a
+9. **The final step runs the project's real build**, so a wrong guide fails during setup rather
+   than silently later.
+10. **A Documentation section covers every library whose API this skill encodes**, each with a
     reference and a changelog. The reference is the agent's escape hatch when the user asks for
     something the steps don't cover; the changelog is what a review pass diffs against to find rot.
-    A docs homepage serves neither — prefer an `llms.txt` and a releases page.
-    - A library the skill merely installs without encoding its API needs no entry. The test is
+    - A library the skill merely installs without encoding its API needs no entry — the test is
       whether an upstream change could break these steps.
-    - Where a changelog is too broad to be useful — a runtime's release notes against the one
-      module this skill touches — keep the key and record why it was skipped, so a review pass can
-      tell a considered omission from an oversight.
+    - A skipped changelog needs its reason recorded, so a review pass can tell a considered
+      omission from an oversight.
+11. **A step with more than one clearly separate concern splits into numbered `###` subheadings**,
+    e.g. `### 2.1 <sub-part>`, `### 2.2 <sub-part>`. `setup-drizzle`'s step 5 is the shape: "Define
+    the schema" covers the tables every setup needs, and a follow-on "Relations" subsection splits
+    off a concern that's separable enough to skip or return to later. Don't split a step whose
+    content is a single continuous concern just to have subheadings.

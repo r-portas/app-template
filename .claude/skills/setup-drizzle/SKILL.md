@@ -140,7 +140,7 @@ export const notesTable = sqliteTable("notes", {
 `int({ mode: "timestamp_ms" })` stores timestamps as milliseconds since epoch and maps them to JS
 `Date` objects — assign `new Date()` or `Date.now()` directly.
 
-### Relations
+### 5.1 Relations
 
 Append to `src/lib/db.schema.ts` (add `defineRelations` to the existing `drizzle-orm` import):
 
