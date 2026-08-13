@@ -258,7 +258,21 @@ function RouteComponent() {
 }
 ```
 
-## 6. Verify
+## 6. Document the convention
+
+Add a `Markdown` section to the project's `CLAUDE.md`, so future content types stay consistent with
+this setup:
+
+```md
+## Markdown
+
+- Register any new code highlighting languages in `src/lib/highlight.ts`'s `languages` array before
+  using them in content.
+- Wrap every render site in the `typeset typeset-docs` classes, and inject `highlightCss` through
+  the route's `head` — see `src/routes/posts.$slug.tsx`.
+```
+
+## 7. Verify
 
 ```bash
 bun run format

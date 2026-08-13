@@ -9,7 +9,7 @@ the "Document the convention" step is for.
 
 ## Structure
 
-```md
+````md
 ---
 name: setup-<thing>
 description: <the situation that should trigger this skill>
@@ -78,13 +78,16 @@ breaking it.>
 
 ## 5. Verify
 
-\`\`\`bash bun run format bun run build \`\`\`
+```bash
+bun run format
+bun run build
+```
 
 <What "working" looks like beyond a green build.>
 
 Then tell the user what changed and how to drive it, pointing at the scripts and the `CLAUDE.md`
 section this skill just wrote rather than restating them.
-```
+````
 
 Step count is not fixed — split or merge the middle steps to fit the setup. The ordering (guard →
 install → configure → code → document → verify) is.

@@ -92,6 +92,7 @@ export default defineConfig({
 ## 3. Verify
 
 ```bash
+bun run format
 bun run build
 ```
 

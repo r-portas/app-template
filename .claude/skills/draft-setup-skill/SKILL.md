@@ -35,7 +35,7 @@ Read [`.claude/setup-skill-template.md`](../../setup-skill-template.md) — it h
 fill in and the rules the finished skill has to satisfy. `setup-drizzle` is the closest worked
 example if the template leaves something ambiguous.
 
-**Done when** you can name the ten rules the draft will be checked against.
+**Done when** you can name all the rules in the template the draft will be checked against.
 
 ## 3. Draft the skeleton
 
@@ -87,7 +87,7 @@ lands in a specific slot:
 | 6 Wrong-tool boundary      | the `Important Caveats` section                      |
 | 7 Documentation            | the Documentation section                            |
 
-**Done when** every interview answer appears in its slot and the draft satisfies all eleven rules in
+**Done when** every interview answer appears in its slot and the draft satisfies all the rules in
 the template.
 
 ## 6. Wire it up
