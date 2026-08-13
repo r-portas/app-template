@@ -64,14 +64,6 @@ bun dev
 bun run update
 ```
 
-## Set up additional tooling
-
-There are a few additional tools that can be configured via agent skills.
-
-- [`/setup-drizzle`](./.claude/skills/setup-drizzle/SKILL.md)
-- [`/setup-markdown`](./.claude/skills/setup-markdown/SKILL.md)
-- [`/setup-vercel-static-hosting`](./.claude/skills/setup-vercel-static-hosting/SKILL.md)
-
 ## Environment variables
 
 Environment variables can be configured in one of two files:
@@ -81,18 +73,6 @@ Environment variables can be configured in one of two files:
   started.
 
 ## Common Tasks
-
-### Add a new setup skill
-
-Set the tool up by hand first, then run
-[`/draft-setup-skill`](./.claude/skills/draft-setup-skill/SKILL.md) to capture it as a reusable
-`/setup-*` skill from the changes on disk.
-
-### Review setup skills
-
-Run [`/review-setup-skills`](./.claude/skills/review-setup-skills/SKILL.md) to check one or all
-`/setup-*` skills against the template and against the upstream libraries' current docs, and fix
-what's drifted. Pass a skill name to review just that one.
 
 ### Update skills
 
