@@ -1,6 +1,6 @@
 ---
 name: review-setup-skills
-description: Reviews and updates existing `/setup-*` skills — checks structure against setup-skill-template.md and diffs each skill's steps against the upstream libraries' current documentation and changelog. Use when asked to audit, review, refresh, or update setup skills, check whether a setup skill is stale or out of date, or verify a skill still matches upstream best practice. Takes an optional skill name; omitted means review every `setup-*` skill.
+description: Reviews and updates existing `/setup-*` skills — checks structure against setup-skill-template.md and diffs each skill's steps against the upstream libraries' current documentation and changelog. Use when a `/setup-*` skill needs checking or refreshing for drift. Takes an optional skill name; omitted means review every `setup-*` skill.
 ---
 
 # Review Setup Skills
@@ -29,11 +29,11 @@ Parse the optional skill-name argument.
 
 ## 2. Read the template
 
-Read `.claude/setup-skill-template.md` in full and hold its eleven rules — they're what step 3's
+Read `.claude/setup-skill-template.md` in full and hold its rules — they're what step 3's
 structural pass checks against. Reread it here rather than relying on a stale summary from a
 previous run.
 
-**Done when** you can name the eleven rules from memory.
+**Done when** you can name every rule in the template from memory.
 
 ## 3. Review each skill
 
@@ -42,8 +42,8 @@ and upstream findings belong in one report, not two.
 
 ### 3.1 Structural pass
 
-Check the skill against each of the template's eleven rules. For each violation, note the rule
-number, what's wrong, and where.
+Check the skill against every rule in the template. For each violation, note the rule number,
+what's wrong, and where.
 
 A few are easy to miss on a skim, so check them deliberately:
 
@@ -55,6 +55,9 @@ A few are easy to miss on a skim, so check them deliberately:
   has since hit a stable 1.0, the pin itself may no longer be needed.
 - The `Documentation` section still lists every library the steps encode, not just the ones
   installed (rule 10).
+
+**Done when** every rule in the template has been checked against the skill, not just the four
+above.
 
 ### 3.2 Upstream pass
 
@@ -102,6 +105,9 @@ would.
 
 Update the `Documentation` section's links if any moved, and update a pin's justification bullet if
 the reason behind it changed.
+
+**Done when** every fix sorted into "fix directly" in step 4 is applied and saved, across every
+skill in scope — not just the first one.
 
 ## 6. Report
 
