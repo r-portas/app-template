@@ -44,6 +44,9 @@ Delete this section from the README.md file
 ## Documentation
 
 - [VISION.md](./VISION.md) — the purpose and goals of this app
+- Setup guides:
+  - [Vercel static hosting](./setup/vercel-static-hosting.md) — configure Vercel for static hosting
+    of the app
 
 ## Getting Started
 
