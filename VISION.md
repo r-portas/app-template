@@ -24,5 +24,5 @@ This template captures those decisions so that you can clone it and start buildi
 
 ## Roadmap
 
-1. Add built-in agent skills for configuring common things, like databases, deployment, etc.
+1. Expand the built-in setup skills ([.claude/skills/](./.claude/skills/)) beyond the current database, markdown, and hosting ones — e.g. Docker, auth, a test framework
 2. Custom theme?
