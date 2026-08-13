@@ -9,6 +9,7 @@ Follow the setup guide for `$1` and leave the integration working.
 
 ## 1. Resolve the guide
 
+- Guides live at `docs/setup/` under the **workspace root**
 - List `docs/setup/*.md`, excluding `_template.md`, to get the valid topic slugs
 - If `$1` is empty or doesn't match a slug, print the list and stop, do not guess
 - Read `docs/setup/$1.md`
