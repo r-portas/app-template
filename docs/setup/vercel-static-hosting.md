@@ -6,8 +6,6 @@ Configures Vercel for static hosting of the app (e.g. static HTML, CSS, JS and a
 
 ### 1. Create the `vercel.json` file
 
-Create a `vercel.json` in the root of the repo:
-
 ```json
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",

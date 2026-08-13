@@ -2,6 +2,10 @@
 
 Short description of what this configures.
 
+> **Important** (optional)
+>
+> Callout any important information or caveats here
+
 ## Steps
 
 ### 1. <step-name>
