@@ -15,7 +15,7 @@ immediately.
 
 - Clone-to-running in minutes, with a documented setup checklist ([README.md](README.md))
 - Easily keep your app up to date with template improvements
-- A opinionated project structure (`src/lib` domain modules split into
+- An opinionated project structure (`src/lib` domain modules split into
   server/functions/schemas/isomorphic) that scales as an app grows
 - Encode agent-facing conventions (CLAUDE.md, skills) so AI-assisted work on downstream apps starts
   from the same good defaults
