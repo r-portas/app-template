@@ -53,7 +53,7 @@ export default defineConfig({
 
 ## Verification
 
-- [ ] Build the project confirm the prerendered HTML files are generated in `dist/client`.
+- [ ] Build the project and confirm the prerendered HTML files are generated in `dist/client`.
 
 ## References
 
