@@ -45,9 +45,9 @@ Delete this section from the README.md file
 
 - [VISION.md](./VISION.md) — the purpose and goals of this app
 - Setup guides:
-  - [Vercel static hosting](./setup/vercel-static-hosting.md) — configure Vercel for static hosting
+  - [Vercel static hosting](./docs/setup/vercel-static-hosting.md) — configure Vercel for static hosting
     of the app
-  - [Drizzle SQLite](./setup/drizzle-sqlite.md) — set up Drizzle with Bun's SQLite driver
+  - [Drizzle SQLite](./docs/setup/drizzle-sqlite.md) — set up Drizzle with Bun's SQLite driver
 
 ## Getting Started
 
