@@ -7,6 +7,11 @@ argument-hint: "<app name, e.g. my-app>"
 disable-model-invocation: true
 ---
 
+> **Important**
+>
+> This skill should only be used from the `app-template` repository, if the user is in a different
+> repo, print an error and stop.
+
 1. Use $1 as the name of the project, if the user doesn't provide one, ask for it
 2. Check that `~/Projects/temp` exists, if not, ask the user where they want to create temporary
    projects
