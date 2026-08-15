@@ -1,6 +1,6 @@
 # app-template
 
-An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and shadcn/ui
+An opinionated app template built using TanStack Start, Bun, Tailwind CSS and shadcn/ui.
 
 ## Template Setup
 
