@@ -2,8 +2,11 @@
 
 An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and shadcn/ui
 
-> **New app?** Work through [docs/template-setup.md](./docs/template-setup.md), then delete it along
-> with this note.
+> **New app?** Set it up either way, then delete `docs/template-setup.md` along with this note:
+>
+> - **With Claude Code** — run `/new-app` from a checkout of this repo. It creates the app in a new
+>   directory, so run it from the template, not from the clone you want to become your app.
+> - **By hand** — work through [docs/template-setup.md](./docs/template-setup.md).
 
 ## Documentation
 

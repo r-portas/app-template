@@ -2,7 +2,8 @@
 
 One-time setup for a new app created from `app-template`. Delete this file once you're done.
 
-> Prefer to automate this? Run the `new-app` skill from the `app-template` repo instead.
+> Prefer to automate this? Run `/new-app` from an `app-template` checkout instead — it does
+> everything below.
 
 ## 1. Clone the template
 
