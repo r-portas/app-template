@@ -11,12 +11,11 @@ An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and s
 ## Prerequisites
 
 - **[Bun](https://bun.com)** — the runtime, package manager and test runner. Install the latest
-  version; Node.js isn't needed.
+  version
 - **Git**
 - **[GitHub CLI](https://cli.github.com)** — only to create the repo during setup, skip it for a
   local-only prototype
-- **[Claude Code](https://claude.com/claude-code)** — optional, and only for the bundled agent
-  skills
+- **[Claude Code](https://claude.com/claude-code)** — optional, for the bundled agent skills
 
 ## Documentation
 
