@@ -21,40 +21,17 @@ git log --oneline HEAD..template/main
 git merge template/main
 ```
 
-## Resolving conflicts
-
-These files are app-owned. On conflict, take your version of the whole file:
-
-```bash
-git checkout --ours <file>
-```
-
-- `src/lib/app-config.ts` — the app name, icon, and sidebar items
-- `README.md` — the app name and description
-- `package.json` — keep your app `name`, but merge in any dependency changes from the template
-
-`bun.lock` conflicts aren't resolvable by hand. Take either side and regenerate it:
-
-```bash
-git checkout --theirs bun.lock
-```
-
-For every other conflict, read both sides and merge the intent — don't blindly take one side.
-
 ## Finishing up
 
 ```bash
 # Pick up dependency changes, and regenerate bun.lock if it conflicted
 bun install
+git add bun.lock
 
 # Confirm nothing broke
 bun run build
 bun test
+
+# Complete the merge — everything resolved must be staged first
+git commit
 ```
-
-## Why pushing to the template is blocked
-
-Setup ran `git remote set-url --push template DISABLED`, so any push to `template` fails while
-fetching and merging keep working. This is deliberate: `git remote rename origin template` also
-rewrites the branch's upstream tracking, so without that guard — plus `git branch --unset-upstream`
-— a bare `git push` in a fresh clone would push this app to the template repository.

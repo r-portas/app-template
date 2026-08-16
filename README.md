@@ -29,25 +29,9 @@ cp .env.local.example .env.local
 
 # Start the development server
 bun dev
-```
 
-## Development
-
-Run these before committing. Agents run them automatically via the hooks in `.claude/settings.json`,
-so if you're working by hand, run them yourself.
-
-```bash
 # Build, typecheck and lint
 bun run build
-
-# Run the tests
-bun test
-
-# Format, including sorting Tailwind classes
-bun run format
-
-# Check formatting without writing changes
-bun run format:check
 
 # Update dependencies to the latest versions
 bun run update

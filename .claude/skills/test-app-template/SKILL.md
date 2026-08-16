@@ -47,7 +47,8 @@ Then confirm the template remote guards from `new-app` step 3 are in place:
 # hardcoded `branch.main.remote` finds nothing and passes even when the guard is missing
 BRANCH=$(git branch --show-current)
 
-git config --get "branch.$BRANCH.remote"  # expect: no output
+# `git config --get` exits 1 when the key is unset, which is the passing case here
+git config --get "branch.$BRANCH.remote" || echo "(unset - pass)"  # expect: (unset - pass)
 git remote get-url --push template        # expect: DISABLED
 git push --dry-run                        # expect: failure
 ```
