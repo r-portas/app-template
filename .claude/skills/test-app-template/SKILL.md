@@ -1,27 +1,62 @@
 ---
 name: test-app-template
 description:
-  Test the app template by creating a temporary project. Use this to verify the template and bundled
-  agent skills work as expected.
+  Test the app template by bootstrapping a temporary project from the current branch and verifying
+  it builds. Use this to verify the template and bundled agent skills work as expected.
 argument-hint: "<app name, e.g. my-app>"
 disable-model-invocation: true
 ---
 
 > **Important**
 >
-> This skill should only be used from the `app-template` repository, if the user is in a different
-> repo, print an error and stop.
+> This skill should only be used from the `app-template` repository. Check `package.json`'s `name`
+> field — if it isn't `app-template`, print an error and stop.
 
-1. Use $1 as the name of the project, if the user doesn't provide one, ask for it
-2. Check that `~/Projects/temp` exists, if not, ask the user where they want to create temporary
-   projects
-3. Follow the "Template Setup" section in the `README.md` in the **workspace root**, with these
-   changes:
-   - For the "Clone the template" step, clone the **local workspace root repo** at its **current
-     branch** (run `git branch --show-current` in the workspace root to get it) instead of cloning
-     from the GitHub remote, e.g.
-     `git clone -b <current-branch> <workspace-root> ~/Projects/temp/$1`. This ensures the branch
-     being worked on is tested, not just what's on `main`. Committed but unpushed changes are
-     included; uncommitted changes are not — if any matter for the test, commit them first.
-   - **Skip** the "Push changes" step. Temporary projects should **not** be pushed to GitHub.
-4. Run `bun install`
+## 1. Resolve the destination
+
+- Use `$1` as the project name, if the user doesn't provide one, ask for it
+- Check that `~/Projects/temp` exists, if not, ask the user where they want to create temporary
+  projects
+- The destination is `~/Projects/temp/$1`, if it already exists, ask before removing it
+
+## 2. Bootstrap
+
+Follow the `new-app` skill (`.claude/skills/new-app/SKILL.md`) with these overrides:
+
+- **Clone from the local workspace root at its current branch**, not from GitHub:
+  `git clone -b <branch> <workspace-root> ~/Projects/temp/$1`, where `<branch>` comes from running
+  `git branch --show-current` in the workspace root. This tests the branch being worked on, not
+  what's on `main`. Committed but unpushed changes are included, uncommitted ones are not — commit
+  anything that matters to the test first.
+- **Always use throwaway prototype mode** — never create a GitHub repo, never push
+- Skip `new-app`'s report step, report from step 4 below instead
+
+## 3. Verify
+
+This is a test, so report failures rather than fixing them. Run each check in the temp project:
+
+- `bun install`
+- `bun run build` — covers the build, typecheck and lint
+- `bun test --pass-with-no-tests`
+- `bun run format:check`
+
+Then confirm the template remote guards from `new-app` step 3 are in place:
+
+```bash
+# Use the current branch, not `main` — this clone is on the branch under test, so a
+# hardcoded `branch.main.remote` finds nothing and passes even when the guard is missing
+BRANCH=$(git branch --show-current)
+
+git config --get "branch.$BRANCH.remote"  # expect: no output
+git remote get-url --push template        # expect: DISABLED
+git push --dry-run                        # expect: failure
+```
+
+A `git push --dry-run` that **succeeds is a test failure** — it means a prototype created from this
+branch could push its commits to the template repo.
+
+## 4. Report
+
+- Which branch was tested, and where the project was created
+- Pass or fail for each verification step, including the output of any failure
+- Remind the user the temp project can be deleted once they're done with it
