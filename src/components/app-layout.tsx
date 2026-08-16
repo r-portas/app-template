@@ -1,26 +1,14 @@
 import { Outlet } from "@tanstack/react-router";
-import { Home, Blocks } from "lucide-react";
 
 import { Sidebar } from "@/components/ui/sidebar";
-import type { SidebarItem } from "@/components/ui/sidebar";
-
-/**
- * The app icon shown at the top of the sidebar.
- */
-const APP_ICON = Blocks;
-
-/**
- * The items shown in the sidebar, each with an icon and a title.
- */
-const SIDEBAR_ITEMS: SidebarItem[] = [
-  { icon: Home, title: "Home", to: "/", activeOptions: { exact: true } },
-];
+import { APP_ICON, SIDEBAR_ITEMS } from "@/lib/app-config";
 
 /**
  * The app shell: a sidebar alongside the routed page content.
  *
  * @remarks
- * Rendered once from `__root.tsx`.
+ * Rendered once from `__root.tsx`. The icon and sidebar items come from
+ * `@/lib/app-config`, so this file stays app-agnostic.
  */
 function AppLayout() {
   return (

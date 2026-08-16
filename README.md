@@ -2,51 +2,32 @@
 
 An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and shadcn/ui
 
-## Template Setup
+> **New app?** Set it up either way, then delete `docs/template-setup.md` along with this note:
+>
+> - **With Claude Code** — run `/new-app` from a checkout of this repo. It creates the app in a new
+>   directory, so run it from the template, not from the clone you want to become your app.
+> - **By hand** — work through [docs/template-setup.md](./docs/template-setup.md).
 
-> This section can be deleted after the initial setup
+## Prerequisites
 
-### 1. Clone the template
-
-```bash
-# Clone the template repository
-git clone git@github.com:r-portas/app-template.git my-app
-cd my-app
-
-# Rename the remote to template so you can pull changes from the template in the future
-git remote rename origin template
-```
-
-### 2. Set up the app
-
-1. Update the `package.json` file with your app name
-2. Update the `README.md` file with your app name and description
-3. Update `VITE_APP_NAME` in the `.env` file with your app name
-4. Set `APP_ICON` in `src/components/app-layout.tsx` to the icon you want to use for your app
-
-### 3. Push changes
-
-```bash
-# Create a new repository on GitHub
-gh repo create github-username/my-app --private --source=. --remote=origin
-
-# Commit changes
-git add . && git commit -m "Init app"
-
-# Push
-git push -u origin main
-```
-
-### 4. Cleanup
-
-Delete this section from the README.md file
+- **[Bun](https://bun.com)** — the runtime, package manager and test runner. Install the latest
+  version
+- **Git**
+- **[GitHub CLI](https://cli.github.com)** — only to create the repo during setup, skip it for a
+  local-only prototype
+- **[Claude Code](https://claude.com/claude-code)** — optional, for the bundled agent skills
 
 ## Documentation
 
-- [VISION.md](./VISION.md) — the purpose and goals of this app
+- [Conventions](./docs/conventions.md) — project structure, coding style, testing, UI, and pull
+  request conventions
+- [Template updates](./docs/template-updates.md) — merging improvements from the template, and
+  resolving the conflicts you'll hit
 - Setup guides:
   - [Vercel static hosting](./docs/setup/vercel-static-hosting.md) — configure Vercel for static
     hosting of the app
+  - [Cloudflare hosting](./docs/setup/cloudflare-hosting.md) — configure Cloudflare for hosting the
+    app
   - [Drizzle SQLite](./docs/setup/drizzle-sqlite.md) — set up Drizzle with Bun's SQLite driver
 
 ## Getting Started
@@ -55,14 +36,14 @@ Delete this section from the README.md file
 # Install dependencies
 bun install
 
-# Install the shadcn/ui agent skill
-bunx --bun skills add shadcn/ui --global
-
 # Copy the example env file and fill in any secrets
 cp .env.local.example .env.local
 
 # Start the development server
 bun dev
+
+# Build, typecheck and lint
+bun run build
 
 # Update dependencies to the latest versions
 bun run update
@@ -78,23 +59,29 @@ Environment variables can be configured in one of two files:
 
 ## Common Tasks
 
-### Update skills
+### Pull changes from the template
+
+Sync improvements made to the template repository into your app after the initial clone. See
+[docs/template-updates.md](./docs/template-updates.md) for the full flow, including how to resolve
+the conflicts you'll hit.
 
 ```bash
+git fetch template
+git log --oneline HEAD..template/main   # check what will be merged
+git merge template/main
+```
+
+### Working with AI agents
+
+Only needed if you use Claude Code or a similar agent — the app itself doesn't depend on any of it.
+
+```bash
+# Install the shadcn/ui agent skill
+bunx --bun skills add shadcn/ui --global
+
+# Update installed skills
 bunx --bun skills update --global
 ```
 
-### Pull changes from the template
-
-Sync improvements made to the template repository into your app after the initial clone.
-
-```bash
-# Fetch the latest changes from the template repository
-git fetch template
-
-# Check what changes will be merged
-git log --oneline HEAD..template/main
-
-# Merge the changes into your local repository
-git merge template/main
-```
+Agent conventions live in [CLAUDE.md](./CLAUDE.md), which points at
+[docs/conventions.md](./docs/conventions.md) for the rules that apply to everyone.
