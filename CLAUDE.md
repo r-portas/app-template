@@ -17,10 +17,6 @@ Before editing files for a substantial task:
 
 <!-- intent-skills:end -->
 
-## Documentation
-
-- [VISION.md](./VISION.md) — what this app does, who it's for, goals and non-goals
-
 ## Planning
 
 - Before planning, check documentation using TanStack Intent
@@ -38,6 +34,8 @@ Before editing files for a substantial task:
   - `todos.schemas.ts` — Zod schemas for the domain.
   - `todos.ts` — isomorphic code that can run on either the client or server (e.g. date helpers),
     usually paired with `todos.test.ts` to unit test it.
+- `src/lib/app-config.ts` holds app-owned identity (name, icon, sidebar items). The template ships
+  it once and never edits it again, so it never conflicts on a template merge.
 - Environment variables are validated with Zod, and must be added to the relevant schema before use:
   - `src/lib/env.ts` — client-readable variables, which must be prefixed with `VITE_`. Values come
     from `.env` (committed) and `.env.local` (gitignored, for secrets).

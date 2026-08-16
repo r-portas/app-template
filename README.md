@@ -2,51 +2,16 @@
 
 An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and shadcn/ui
 
-## Template Setup
-
-> This section can be deleted after the initial setup
-
-### 1. Clone the template
-
-```bash
-# Clone the template repository
-git clone git@github.com:r-portas/app-template.git my-app
-cd my-app
-
-# Rename the remote to template so you can pull changes from the template in the future
-git remote rename origin template
-```
-
-### 2. Set up the app
-
-1. Update the `package.json` file with your app name
-2. Update the `README.md` file with your app name and description
-3. Update `VITE_APP_NAME` in the `.env` file with your app name
-4. Set `APP_ICON` in `src/components/app-layout.tsx` to the icon you want to use for your app
-
-### 3. Push changes
-
-```bash
-# Create a new repository on GitHub
-gh repo create github-username/my-app --private --source=. --remote=origin
-
-# Commit changes
-git add . && git commit -m "Init app"
-
-# Push
-git push -u origin main
-```
-
-### 4. Cleanup
-
-Delete this section from the README.md file
+> **New app?** Work through [docs/template-setup.md](./docs/template-setup.md), then delete it along
+> with this note.
 
 ## Documentation
 
-- [VISION.md](./VISION.md) — the purpose and goals of this app
 - Setup guides:
   - [Vercel static hosting](./docs/setup/vercel-static-hosting.md) — configure Vercel for static
     hosting of the app
+  - [Cloudflare hosting](./docs/setup/cloudflare-hosting.md) — configure Cloudflare for hosting the
+    app
   - [Drizzle SQLite](./docs/setup/drizzle-sqlite.md) — set up Drizzle with Bun's SQLite driver
 
 ## Getting Started

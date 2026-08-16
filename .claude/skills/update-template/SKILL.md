@@ -33,21 +33,22 @@ description:
 
 ## 4. Resolve conflicts
 
-- These files are customized per-app during template setup — on conflict, keep the downstream
-  version unless the template's change is clearly unrelated to the customization:
-  - `package.json` — app `name`
-  - `README.md` — app name/description, and the "Template Setup" section (deleted in downstream
-    apps)
-  - `VISION.md` — this is the app's own vision, not the template's
-  - `.env` — `VITE_APP_NAME`
-  - `src/components/app-layout.tsx` — `APP_ICON`
+- These files are app-owned — on conflict, take the downstream version of the whole file
+  (`git checkout --ours <file>`):
+  - `src/lib/app-config.ts` — app name, icon, and sidebar items
+  - `README.md` — app name and description
+  - `package.json` — app `name` (keep the downstream name, but merge in any dependency changes from
+    the template)
+- `bun.lock` conflicts are not resolvable by hand — take either side, then regenerate it in step 5:
+  `git checkout --theirs bun.lock`
 - For every other conflict, read both sides and merge the intent — don't blindly take one side
 - Stage resolved files and continue: `git add <file>` for each, no need to commit separately since
   the merge commit isn't finalized until all conflicts are staged
 
 ## 5. Verify
 
-- `bun install` — pick up any dependency changes from the template
+- `bun install` — pick up any dependency changes from the template, and regenerate `bun.lock` if it
+  conflicted
 - Run the project's build and test commands (check `package.json` scripts) to confirm nothing broke
 
 ## 6. Report

@@ -2,7 +2,7 @@ import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import { AppLayout } from "@/components/app-layout";
 import { Providers } from "@/components/providers";
-import clientEnv from "@/lib/env";
+import { APP_NAME } from "@/lib/app-config";
 
 import appCss from "@/styles.css?url";
 
@@ -17,7 +17,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: clientEnv.VITE_APP_NAME,
+        title: APP_NAME,
       },
     ],
     links: [
