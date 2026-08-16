@@ -8,6 +8,16 @@ An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and s
 >   directory, so run it from the template, not from the clone you want to become your app.
 > - **By hand** — work through [docs/template-setup.md](./docs/template-setup.md).
 
+## Prerequisites
+
+- **[Bun](https://bun.com)** 1.3 or newer — the runtime, package manager and test runner. Node.js
+  isn't needed.
+- **Git**
+- **[GitHub CLI](https://cli.github.com)** — only to create the repo during setup, skip it for a
+  local-only prototype
+- **[Claude Code](https://claude.com/claude-code)** — optional, and only for the bundled agent
+  skills
+
 ## Documentation
 
 - [Conventions](./docs/conventions.md) — project structure, coding style, testing, UI, and pull
