@@ -17,80 +17,29 @@ Before editing files for a substantial task:
 
 <!-- intent-skills:end -->
 
+## Conventions
+
+Read [docs/conventions.md](./docs/conventions.md) before editing files. It is the source of truth
+for project structure, coding style, testing, UI and pull request conventions, and applies to
+everyone working in this repo.
+
+The rules most easily got wrong, kept here as an index — see the doc above for the reasoning:
+
+- `src/lib` files are named by domain and environment: `todos.server.ts`, `todos.functions.ts`,
+  `todos.schemas.ts`, `todos.ts`
+- Environment variables must be added to the Zod schema in `src/lib/env.ts` (client, `VITE_`
+  prefixed) or `src/lib/env.server.ts` (server) before use
+- App identity — name, icon, sidebar items — lives in `src/lib/app-config.ts`, never inline in
+  components
+- **Never use `<Button render={<a />} nativeButton={false} />` for links.** Base UI's `Button`
+  always applies `role="button"`, overriding the link role. Use `buttonVariants` with a plain `<a>`.
+
 ## Planning
 
 - Before planning, check documentation using TanStack Intent
 - Always prefer simpler, robust solutions
   - If you see a way to solve a problem simpler or most robustly, flag it with the user
 
-## Project Structure
+## Merging template updates
 
-- `src/lib` contains the project's library code, grouped by domain via this naming convention (e.g.
-  for a `todos` domain):
-  - `todos.server.ts` — server-only code, usually paired with `todos.server.test.ts` to unit test
-    it.
-  - `todos.functions.ts` — a thin wrapper exposing server functions, importing from
-    `todos.server.ts`.
-  - `todos.schemas.ts` — Zod schemas for the domain.
-  - `todos.ts` — isomorphic code that can run on either the client or server (e.g. date helpers),
-    usually paired with `todos.test.ts` to unit test it.
-- `src/lib/app-config.ts` holds app-owned identity (name, icon, sidebar items). The template ships
-  it once and never edits it again, so it never conflicts on a template merge.
-- Environment variables are validated with Zod, and must be added to the relevant schema before use:
-  - `src/lib/env.ts` — client-readable variables, which must be prefixed with `VITE_`. Values come
-    from `.env` (committed) and `.env.local` (gitignored, for secrets).
-  - `src/lib/env.server.ts` — server-only variables.
-
-## Coding Preferences
-
-- Apply the YAGNI and KISS principles
-- Keep things simple, robust and readable
-- Keep comments up to date with code changes
-- Exports benefit from a short tsdoc comment describing intent and any non-obvious behaviour. Not
-  required for every export — use judgment based on complexity. When you do add one, use the
-  following format:
-  ```ts
-  /**
-   * <short description>
-   *
-   * @param myParam - <short description>
-   * ...
-   *
-   * @remarks
-   * <optional: mention any behaviour that might trip up another developer>
-   *
-   * @example
-   * \`\`\`ts
-   * <example usage>
-   * \`\`\`
-   */
-  ```
-- Inline Comments
-  - Add inline comments for any non-obvious behavior
-  - Inline comments should explain the _why_
-  - Inline comments should be concise and useful (1-2 lines max)
-
-## Testing
-
-- Always use Bun's test runner (`bun test`), see [the documentation](https://bun.com/docs/test.md)
-  for more information.
-- Before writing tests, extract pure functions and presentational components out of framework
-  wrappers (e.g. `createServerFn`, route files) so tests don't need runtime context.
-
-## User Interface
-
-- This project uses [shadcn/ui](https://ui.shadcn.com) components built on Tailwind CSS (v4) and
-  Base UI.
-- `components.json` configures the shadcn CLI (style, aliases, icon library).
-- Use `bun shadcn add <component>` to add new components.
-- Tailwind is configured CSS-first via `src/styles.css`
-- Tailwind class sorting is handled by Oxfmt's `sortTailwindcss` option in `.oxfmtrc.json`, so
-  classes are reordered automatically on format.
-- **Do not use `<Button render={<a />} nativeButton={false} />` for links.** The Base UI `Button`
-  component always applies `role="button"`, which overrides the semantic link role on `<a>`
-  elements. Use `buttonVariants` with a plain `<a>` tag instead.
-
-## Pull requests
-
-- See the `pull-request` skill (`.claude/skills/pull-request/SKILL.md`) for title, description, and
-  branch naming conventions.
+- See [docs/template-updates.md](./docs/template-updates.md), or use the `update-template` skill.

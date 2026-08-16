@@ -5,32 +5,13 @@ description:
   pull requests.
 ---
 
-## Conventions
+Follow the "Branches and pull requests" section of
+[docs/conventions.md](../../../docs/conventions.md) — it holds the branch naming convention and the
+pull request description template, and is shared with anyone working in the repo by hand.
 
-- Titles should be simple and easy to understand
-- Use the following template for the description:
-  ```md
-  ## What
+Read that section before creating or updating a pull request, then:
 
-  <!-- one line summary -->
-
-  ## Why
-
-  <!-- dot point list of reasons for the change -->
-
-  ## How
-
-  <!-- dot point list of how the change was implemented, used nested dot points as required -->
-
-  ## Testing
-
-  <!-- list of checkboxes for testing -->
-  ```
-- Use the following branch naming convention: `<type>/<short-description>`, where `<type>` is one
-  of:
-  - `feature` — for new features
-  - `fix` — for bug fixes
-  - `refactor` — for refactoring existing code
-  - `docs` — for documentation changes
-  - `test` — for test changes
-  - `chore` — for other changes that don't modify src or tests (e.g. build, tooling, dependencies)
+- Title the pull request simply, describing the change rather than the implementation
+- Fill in every section of the description template, leaving out any that genuinely doesn't apply
+- Base the branch name on the dominant `<type>` of the change; if a branch spans several types, pick
+  the one that describes the user-visible outcome

@@ -33,15 +33,8 @@ description:
 
 ## 4. Resolve conflicts
 
-- These files are app-owned — on conflict, take the downstream version of the whole file
-  (`git checkout --ours <file>`):
-  - `src/lib/app-config.ts` — app name, icon, and sidebar items
-  - `README.md` — app name and description
-  - `package.json` — app `name` (keep the downstream name, but merge in any dependency changes from
-    the template)
-- `bun.lock` conflicts are not resolvable by hand — take either side, then regenerate it in step 5:
-  `git checkout --theirs bun.lock`
-- For every other conflict, read both sides and merge the intent — don't blindly take one side
+- Follow the "Resolving conflicts" section of `docs/template-updates.md`, which lists the app-owned
+  files to take `--ours` on and how to handle `bun.lock`
 - Stage resolved files and continue: `git add <file>` for each, no need to commit separately since
   the merge commit isn't finalized until all conflicts are staged
 

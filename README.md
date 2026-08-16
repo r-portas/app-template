@@ -7,6 +7,10 @@ An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and s
 
 ## Documentation
 
+- [Conventions](./docs/conventions.md) — project structure, coding style, testing, UI, and pull
+  request conventions
+- [Template updates](./docs/template-updates.md) — merging improvements from the template, and
+  resolving the conflicts you'll hit
 - Setup guides:
   - [Vercel static hosting](./docs/setup/vercel-static-hosting.md) — configure Vercel for static
     hosting of the app
@@ -20,14 +24,30 @@ An opinionated app template built using TanStack Start, Bun, Tailwind CSS, and s
 # Install dependencies
 bun install
 
-# Install the shadcn/ui agent skill
-bunx --bun skills add shadcn/ui --global
-
 # Copy the example env file and fill in any secrets
 cp .env.local.example .env.local
 
 # Start the development server
 bun dev
+```
+
+## Development
+
+Run these before committing. Agents run them automatically via the hooks in `.claude/settings.json`,
+so if you're working by hand, run them yourself.
+
+```bash
+# Build, typecheck and lint
+bun run build
+
+# Run the tests
+bun test
+
+# Format, including sorting Tailwind classes
+bun run format
+
+# Check formatting without writing changes
+bun run format:check
 
 # Update dependencies to the latest versions
 bun run update
@@ -43,23 +63,29 @@ Environment variables can be configured in one of two files:
 
 ## Common Tasks
 
-### Update skills
+### Pull changes from the template
+
+Sync improvements made to the template repository into your app after the initial clone. See
+[docs/template-updates.md](./docs/template-updates.md) for the full flow, including how to resolve
+the conflicts you'll hit.
 
 ```bash
+git fetch template
+git log --oneline HEAD..template/main   # check what will be merged
+git merge template/main
+```
+
+### Working with AI agents
+
+Only needed if you use Claude Code or a similar agent — the app itself doesn't depend on any of it.
+
+```bash
+# Install the shadcn/ui agent skill
+bunx --bun skills add shadcn/ui --global
+
+# Update installed skills
 bunx --bun skills update --global
 ```
 
-### Pull changes from the template
-
-Sync improvements made to the template repository into your app after the initial clone.
-
-```bash
-# Fetch the latest changes from the template repository
-git fetch template
-
-# Check what changes will be merged
-git log --oneline HEAD..template/main
-
-# Merge the changes into your local repository
-git merge template/main
-```
+Agent conventions live in [CLAUDE.md](./CLAUDE.md), which points at
+[docs/conventions.md](./docs/conventions.md) for the rules that apply to everyone.
